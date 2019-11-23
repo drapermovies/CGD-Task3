@@ -4,7 +4,6 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-
     public float jumpSpeed = 600.0f;
     public bool grounded = false;
     public Transform groundCheck;
@@ -13,8 +12,11 @@ public class EnemyAI : MonoBehaviour
     public Rigidbody rb;
     public float vSpeed;
 
+    public bool has_bumped { get; set; }
+
     [SerializeField] private Transform target_marker = null;
     [SerializeField] private ParticleSystem run_particles = null;
+    [SerializeField] private ParticleSystem bump_particles = null;
 
     private Animator anim;
 
@@ -29,9 +31,13 @@ public class EnemyAI : MonoBehaviour
         //Loop through children to get the correct children we need
         foreach(Transform child in GetComponentsInChildren<Transform>())
         {
-            if(child.name == "Running Particles")
+            if(child.name == "Running Particles" && !run_particles)
             {
                 run_particles = child.GetComponent<ParticleSystem>();
+            }
+            else if(child.name == "Collision Particles" && !bump_particles)
+            {
+                bump_particles = child.GetComponent<ParticleSystem>();
             }
         }
     }
@@ -115,7 +121,7 @@ public class EnemyAI : MonoBehaviour
 
         //Line at the mouse position
         Debug.DrawLine(target_marker.position,
-    target_marker.position + Vector3.up * 5);
+                       target_marker.position + Vector3.up * 5);
     }
 
     public void UpdateTargets(Vector3 target_pos)
@@ -164,5 +170,14 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("isIdle", false);
 
         GetComponent<NavMeshAgent>().speed = 3.5f; //Move faster
+    }
+
+    public void Bump()
+    {
+        if (!has_bumped)
+        {
+            bump_particles.Play();
+            has_bumped = true;
+        }
     }
 }
