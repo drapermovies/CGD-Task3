@@ -4,17 +4,19 @@ using UnityEngine.AI;
 
 public class CharMovement : MonoBehaviour
 {
-
     public float jumpSpeed = 600.0f;
     public bool grounded = false;
     public Transform groundCheck;
     public float groundRadius = 0.2f;
     public LayerMask whatIsGround;
-    private Animator anim;
+
     public Rigidbody rb;
     public float vSpeed;
 
+    [SerializeField] private ParticleSystem run_particles = null;
     [SerializeField] private Transform target_marker = null;
+
+    private Animator anim;
 
     private NavMeshAgent[] nav_agents;
 
@@ -23,6 +25,14 @@ public class CharMovement : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         anim.SetBool("isIdle", true);
+
+        foreach (Transform child in GetComponentsInChildren<Transform>())
+        {
+            if (child.name == "Running Particle")
+            {
+                run_particles = child.GetComponent<ParticleSystem>();
+            }
+        }
     }
     void Start()
     {
@@ -41,6 +51,11 @@ public class CharMovement : MonoBehaviour
         if (Input.GetKeyDown("space") && anim.GetBool("isIdle"))
         {
             Jump();
+        }
+
+        if (anim.GetBool("isRun") && !run_particles.isPlaying)
+        {
+            run_particles.Play();
         }
 
         //Debug function that allows the monster to walk to the cursor
@@ -83,23 +98,15 @@ public class CharMovement : MonoBehaviour
 #endif 
     }
 
-    public void Jump()
-    {
-        if (grounded && rb.velocity.y == 0)
-        {
-            anim.SetTrigger("isJump");
-            rb.AddForce(0, jumpSpeed, 0, ForceMode.Impulse);
-        }
-    }
-
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
 
         //Line at the mouse position
         Debug.DrawLine(target_marker.position,
-    target_marker.position + Vector3.up * 5);
+                       target_marker.position + Vector3.up * 5);
     }
 
     public void UpdateTargets(Vector3 target_pos)
@@ -136,6 +143,9 @@ public class CharMovement : MonoBehaviour
         anim.SetBool("crippled", false);
         anim.SetBool("dancing", false);
 
+        run_particles.Stop();
+        run_particles.Clear();
+
         Debug.Log("Idle");
     }
 
@@ -145,5 +155,14 @@ public class CharMovement : MonoBehaviour
         anim.SetBool("isIdle", false);
 
         GetComponent<NavMeshAgent>().speed = 3.5f; //Move faster
+    }
+
+    public void Jump()
+    {
+        if (grounded && rb.velocity.y == 0)
+        {
+            anim.SetTrigger("isJump");
+            rb.AddForce(0, jumpSpeed, 0, ForceMode.Impulse);
+        }
     }
 }
