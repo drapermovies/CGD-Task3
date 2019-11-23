@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.AI;
 
-public class CharMovement : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
 
     public float jumpSpeed = 600.0f;
@@ -10,11 +10,13 @@ public class CharMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundRadius = 0.2f;
     public LayerMask whatIsGround;
-    private Animator anim;
     public Rigidbody rb;
     public float vSpeed;
 
     [SerializeField] private Transform target_marker = null;
+    [SerializeField] private ParticleSystem run_particles = null;
+
+    private Animator anim;
 
     private NavMeshAgent[] nav_agents;
 
@@ -23,6 +25,15 @@ public class CharMovement : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         anim.SetBool("isIdle", true);
+
+        //Loop through children to get the correct children we need
+        foreach(Transform child in GetComponentsInChildren<Transform>())
+        {
+            if(child.name == "Running Particles")
+            {
+                run_particles = child.GetComponent<ParticleSystem>();
+            }
+        }
     }
     void Start()
     {
@@ -41,6 +52,11 @@ public class CharMovement : MonoBehaviour
         if (Input.GetKeyDown("space") && anim.GetBool("isIdle"))
         {
             Jump();
+        }
+
+        if (anim.GetBool("isRun") && !run_particles.isPlaying)
+        {
+            run_particles.Play();
         }
 
         //Debug function that allows the monster to walk to the cursor
@@ -137,6 +153,9 @@ public class CharMovement : MonoBehaviour
         anim.SetBool("dancing", false);
 
         Debug.Log("Idle");
+
+        run_particles.Clear();
+        run_particles.Stop();
     }
 
     public void Run()
