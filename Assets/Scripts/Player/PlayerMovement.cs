@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
 
     private velocity vel;
     float accel = 5.0f;
-    float jumpAccel = 2.5f;
+    float jumpAccel = 0.0f;
+
+    private Rigidbody rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidbody = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -68,6 +70,30 @@ public class PlayerMovement : MonoBehaviour
             {
                 vel.forward = 0.0f;
             }
+        }
+
+        //jump
+        //Vector3 rgVel = rigidbody.velocity;
+       
+        //else if (rgVel.y > 0.0f)
+        //{
+        //    rgVel.y -= 9.81f * Time.deltaTime;
+        //    rigidbody.velocity = rgVel;
+        //}
+
+
+        //rotation
+        Vector3 rotate = Vector3.zero;
+        rotate.y = Input.GetAxis("Mouse X");
+
+        transform.Rotate(rotate * Time.deltaTime * 325.0f);
+    }
+
+    private void FixedUpdate()
+    {
+        if (rigidbody.velocity.y == 0.0f)
+        {
+            rigidbody.AddForce(new Vector3(0, 30, 0) * Input.GetAxis("Jump"), ForceMode.Impulse);
         }
     }
 }
