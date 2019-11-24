@@ -6,30 +6,20 @@ public class FollowCamera : MonoBehaviour
 {
     
     public Transform target;
-    public float smoothTime = 0.3F;
-    private Vector3 velocity = Vector3.zero;
-    Vector3 defaultPos;
+    public float turnSpeed = 4.0f;
+    private Vector3 offsetX;
+    private Vector3 offsetY;
 
     // Start is called before the first frame update
     void Start()
     {
-        defaultPos = target.position;
+        offsetX = new Vector3(target.position.x, target.position.y + 2.0f, target.position.z - 6.0f);
     }
 
-    void Update()
+    void LateUpdate()
     {
-        // Define a target position above and behind the target transform
-        Vector3 targetPosition = target.TransformPoint(new Vector3(0, defaultPos.y, -6));
-        
-        //rotation
-        Vector3 rotate = Vector3.zero;
-        rotate.x = Input.GetAxis("Mouse Y");
-        //transform.RotateAround(target.position, rotate, Time.deltaTime * 20);
-
-        // Smoothly move the camera towards that target position
-        //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-
-        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothTime);
-        transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, smoothTime);
+        offsetX = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offsetX;
+        transform.position = target.position + offsetX;
+        transform.LookAt(target.position);
     }
 }
