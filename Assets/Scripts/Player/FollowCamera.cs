@@ -51,7 +51,14 @@ public class FollowCamera : MonoBehaviour
             }
             else
             {
-                offset = offset + (((player.up * defaultOffset.y) + (player.forward * defaultOffset.z) - offset) * Time.deltaTime * 10);
+                if (Vector3.Angle(player.forward, camForward) > 90f)
+                {
+                    offset = Quaternion.Euler(player.up * defaultOffset.y) * offset;
+                }
+                else
+                {
+                    offset = offset + (((player.right * defaultOffset.x) + (player.up * defaultOffset.y) + (player.forward * defaultOffset.z) - offset) * Time.deltaTime * 10);
+                }
                 transform.position = target.position + offset;
                 transform.LookAt(target);
             }
