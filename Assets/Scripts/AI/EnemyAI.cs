@@ -14,6 +14,8 @@ public class EnemyAI : MonoBehaviour
     public Rigidbody rb;
     public float vSpeed;
 
+    public float EnemyRunDistance = 4.0f;
+
     public List<Vector3> waypoints = new List<Vector3>();
 
     public bool has_bumped { get; set; }
@@ -61,6 +63,9 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         CheckIdleState();
+
+        FindPlayer();
+
         BumpCheck();
 
         if (Input.GetKeyDown("space") && anim.GetBool("isIdle"))
@@ -176,8 +181,6 @@ public class EnemyAI : MonoBehaviour
         run_particles.Clear();
         run_particles.Stop();
 
-        FindPlayer();
-
         FindNearestWaypoint(); //Go to nearest point if idle
     }
 
@@ -280,9 +283,15 @@ public class EnemyAI : MonoBehaviour
             Vector3 player_pos = player.transform.position;
 
             //If the player is too close, we run away
-            if (Vector3.Distance(transform.position, player_pos) <= 100)
+            if (Vector3.Distance(transform.position, player_pos) <= EnemyRunDistance)
             {
+                Vector3 dirToPlayer = transform.position - player_pos;
+
+                Vector3 newPos = transform.position + dirToPlayer;
+
                 Run();
+                UpdateTargets(newPos);
+
                 return;
             }
         }
