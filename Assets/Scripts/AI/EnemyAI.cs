@@ -6,22 +6,27 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    [Header("Default Values")]
     public float jumpSpeed = 600.0f;
+    public float EnemyRunDistance = 4.0f;
+
+    [Header("Jump")]
     public bool grounded = false;
     public Transform groundCheck;
     public float groundRadius = 0.2f;
     public LayerMask whatIsGround;
     public Rigidbody rb;
-    public float vSpeed;
 
-    public float EnemyRunDistance = 4.0f;
-
+    [Header("Pathfinding")]
     public List<Vector3> waypoints = new List<Vector3>();
 
     public bool has_bumped { get; set; }
 
-    [SerializeField] private float bump_range = 0.5f;
+    [Header("Bump")]
+    [SerializeField] private float bump_range = 1.25f;
     [SerializeField] private Transform target_marker = null;
+
+    [Header("Particles")]
     [SerializeField] private ParticleSystem run_particles = null;
     [SerializeField] private ParticleSystem bump_particles = null;
 
@@ -29,6 +34,7 @@ public class EnemyAI : MonoBehaviour
 
     private NavMeshAgent[] nav_agents;
 
+    private float vSpeed;
     private float new_bump = 0.0f;
 
     void Awake()
