@@ -32,9 +32,10 @@ public class GlitchSwitcher : MonoBehaviour
     IEnumerator Glitch()
     {
         glitchDuration = new WaitForSeconds(Random.Range(.05f,.25f));
-        holoRenderer.material.SetFloat("_Transparency", 1f);
-        holoRenderer.material.SetFloat("_Amount", 1f);
-        holoRenderer.material.SetFloat("_CutoutThresh", .29f);
+        holoRenderer.material.SetFloat("_Transparency", .5f);
+        holoRenderer.material.SetFloat("_Amount", .17f);
+        holoRenderer.material.SetFloat("_Distance", .25f);
+        holoRenderer.material.SetFloat("_CutoutThresh", 0f);
         holoRenderer.material.SetFloat("_Amplitude",Random.Range(100,250));
         holoRenderer.material.SetFloat("_Speed",Random.Range(1,10));
         yield return glitchDuration;
