@@ -16,17 +16,18 @@ public class PlayerMovement : MonoBehaviour
     private float turnSpeed = 0.1f;
 
     private Rigidbody rigidbody;
-    private Camera camera;
+    public Camera camera;
 
     private Vector3 desiredMoveDirection;
     private float camTimer = 1.0f;
     public bool newMove = true;
+    public float resetCamTimer = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = gameObject.GetComponent<Rigidbody>();
-        camera = Camera.main;
+        camTimer = resetCamTimer;
     }
 
     // Update is called once per frame
@@ -154,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (camTimer < 1.0f)
         {
-            camTimer = 1.0f;
+            camTimer = resetCamTimer;
         }
     }
 }

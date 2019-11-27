@@ -16,6 +16,8 @@ public class FollowCamera : MonoBehaviour
     private Vector3 playerForward;
     private Vector3 playerRight;
     private Vector3 playerUp;
+    
+    private bool offsetInRange = true;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,30 @@ public class FollowCamera : MonoBehaviour
                 }
             }
             offset = Quaternion.Euler(0, Input.GetAxis("Mouse X"), 0) * offset;
-            offset = Quaternion.AngleAxis(-Input.GetAxis("Mouse Y"), transform.right) * offset;
+            Vector3 newOffset = Quaternion.AngleAxis(-Input.GetAxis("Mouse Y"), transform.right) * offset;
+            if (newOffset.y < -0.5f || newOffset.y > 1.0f)
+            {
+                if(offsetInRange)
+                {
+                    offsetInRange = false;
+                }
+                if(newOffset.y < -0.5f)
+                {
+                    newOffset.y = -0.5f;
+                }
+                else
+                {
+                    newOffset.y = 1.0f;
+                }
+            }
+            else
+            {
+                if(!offsetInRange)
+                {
+                    offsetInRange = true;
+                }
+                offset = newOffset;
+            }
             transform.position = target.position + offset;
             transform.LookAt(target);
         }
