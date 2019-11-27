@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     {
         public float forward;
         public float horizontal;
-        public float vertical;
+        //public float vertical;
     }
 
     private velocity vel;
@@ -16,18 +16,29 @@ public class PlayerMovement : MonoBehaviour
     private float turnSpeed = 0.1f;
 
     private Rigidbody rigidbody;
-    private Camera camera;
+    public Camera camera;
+
+    private Vector3 desiredMoveDirection;
+    private float camTimer = 1.0f;
+    public bool newMove = true;
+    public float resetCamTimer = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = gameObject.GetComponent<Rigidbody>();
-        camera = Camera.main;
+        camTimer = resetCamTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("a"))
+        if ((Input.GetKeyDown("w") || Input.GetKeyDown("s") || Input.GetKeyDown("a") || Input.GetKeyDown("d")) && !newMove)
+        {
+            newMove = true;
+        }
+
+        if (Input.GetKey("a"))
         {
             vel.horizontal -= accel * Time.deltaTime;
         }
@@ -100,24 +111,51 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 camForward = camera.transform.forward;
             Vector3 camRight = camera.transform.right;
-            Vector3 camUp = camera.transform.up;
             
             camForward.y = 0f;
             camRight.y = 0f;
-            camUp.y = 0f;
-            camUp.Normalize();
             camForward.Normalize();
             camRight.Normalize();
 
             //camera direction with player velocity applied
-            Vector3 desiredMoveDirection = camForward * vel.forward + camRight * vel.horizontal;
+            if (newMove)
+            {
+                desiredMoveDirection = camForward * vel.forward + camRight * vel.horizontal;
+            }
 
             //Move relative to camera's rotation
-            Vector3 pos = transform.position + desiredMoveDirection * Time.deltaTime;
-            transform.position = pos;
+            transform.position = transform.position + desiredMoveDirection * Time.deltaTime;
 
-            //face direction camera is facing
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(camForward, camUp), turnSpeed);
+            //rotate
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), turnSpeed);
+
+            //if camera isnt facing general direction of player movement
+            //countdown and set rotation to face player direction
+            if (Vector3.Angle(camForward, transform.forward) > 50.0f && newMove)
+            {
+                camTimer -= Time.deltaTime;
+                if (camTimer <= 0.0f)
+                {
+                    camera.GetComponent<FollowCamera>().rotateToPlayer = true;
+                    camera.GetComponent<FollowCamera>().SetNewDirections(transform.up, transform.forward, transform.right);
+                    newMove = false;
+                }
+            }
+            else
+            {
+                ResetCamTimer();
+            }
+        }
+        else
+        {
+            ResetCamTimer();
+        }
+    }
+    public void ResetCamTimer()
+    {
+        if (camTimer < 1.0f)
+        {
+            camTimer = resetCamTimer;
         }
     }
 }
