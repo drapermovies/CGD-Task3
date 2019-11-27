@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
             //if camera isnt facing general direction of player movement
             //countdown and set rotation to face player direction
-            if (Vector3.Angle(camForward, transform.forward) > 30.0f && newMove)
+            if (Vector3.Angle(camForward, transform.forward) > 50.0f && newMove)
             {
                 camTimer -= Time.deltaTime;
                 if (camTimer <= 0.0f)

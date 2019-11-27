@@ -16,7 +16,7 @@ public class FollowCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(0, 0.6f, -2.0f);
+        offset = new Vector3(0, 0.5f, -1.75f);
         defaultOffset = offset;
     }
 
@@ -51,9 +51,9 @@ public class FollowCamera : MonoBehaviour
             }
             else
             {
-                if (Vector3.Angle(player.forward, camForward) > 90f)
+                if (Vector3.Angle(player.forward, camForward) > 100f)
                 {
-                    offset = Quaternion.Euler(player.up * defaultOffset.y) * offset;
+                    offset = offset + (((-player.forward * defaultOffset.x) + (player.up * defaultOffset.y) + (player.right * defaultOffset.z) - offset));
                 }
                 else
                 {
