@@ -6,10 +6,15 @@ public class MenuController : MonoBehaviour
 {
 
     public int index;
+    public int lockedIndex = 10;
     [SerializeField] bool keyDown;
     [SerializeField] int maxIndex;
     public AudioSource audioSource;
 
+    public GameObject mainMenu;
+    public GameObject optionsMenu;
+
+    public bool currentlyTransitioning = false;
     public bool hasTransitionedIn = false;
     public bool hasTransitionedOut = false;
 
@@ -22,38 +27,43 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Vertical") != 0)
+        if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Mouse ScrollWheel") != 0) && currentlyTransitioning == false)
         {
             if (!keyDown)
             {
-                if (Input.GetAxis("Vertical") < 0)
-                {
-                    if (index < maxIndex)
-                    {
-                        index++;
-                    }
-                    else
-                    {
-                        index = 0;
-                    }
-                }
-                else if (Input.GetAxis("Vertical") > 0)
-                {
-                    if (index > 0)
-                    {
-                        index--;
-                    }
-                    else
-                    {
-                        index = maxIndex;
-                    }
-                }
+                menuScrolling();
                 keyDown = true;
             }
         }
-        else
+        else 
         {
             keyDown = false;
+        }
+    }
+
+    private void menuScrolling()
+    {
+        if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            if (index < maxIndex)
+            {
+                index++;
+            }
+            else
+            {
+                index = 0;
+            }
+        }
+        else if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if (index > 0)
+            {
+                index--;
+            }
+            else
+            {
+                index = maxIndex;
+            }
         }
     }
 }
