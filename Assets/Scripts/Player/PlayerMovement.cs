@@ -136,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
                 if (camTimer <= 0.0f)
                 {
                     camera.GetComponent<FollowCamera>().rotateToPlayer = true;
+                    camera.GetComponent<FollowCamera>().SetNewDirections(transform.up, transform.forward, transform.right);
                     newMove = false;
                 }
             }
