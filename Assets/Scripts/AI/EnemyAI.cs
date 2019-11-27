@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    #region Header 
     [Header("Default Values")]
     public float jumpSpeed = 600.0f;
     public float EnemyRunDistance = 4.0f;
@@ -24,7 +25,6 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Bump")]
     [SerializeField] private float bump_range = 1.25f;
-    [SerializeField] private Transform target_marker = null;
 
     [Header("Particles")]
     [SerializeField] private ParticleSystem run_particles = null;
@@ -36,6 +36,7 @@ public class EnemyAI : MonoBehaviour
 
     private float vSpeed;
     private float new_bump = 0.0f;
+    #endregion
 
     void Awake()
     {
@@ -83,45 +84,6 @@ public class EnemyAI : MonoBehaviour
         {
             run_particles.Play();
         }
-
-        //Debug function that allows the monster to walk to the cursor
-#if UNITY_EDITOR
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit_info;
-
-            if (Physics.Raycast(ray.origin, ray.direction, out hit_info))
-            {
-                Vector3 target_pos = Vector3.zero;
-
-                target_pos = hit_info.point;
-                CrippledWalk();
-                UpdateTargets(target_pos);
-                target_marker.position = target_pos;
-            }
-        }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit_info;
-
-            if (Physics.Raycast(ray.origin, ray.direction, out hit_info))
-            {
-                Vector3 target_pos = Vector3.zero;
-
-                target_pos = hit_info.point;
-                Run();
-                UpdateTargets(target_pos);
-                target_marker.position = target_pos;
-            }
-        }
-#endif
-#if !UNITY_EDITOR
-        Debug.Log("We're a standalone");
-        Destroy(target_marker.gameObject);
-#endif 
     }
 
     public void Jump()
@@ -137,10 +99,6 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
-
-        //Line at the mouse position
-        Debug.DrawLine(target_marker.position,
-                       target_marker.position + Vector3.up * 5);
 
         foreach(Vector3 point in waypoints)
         {
