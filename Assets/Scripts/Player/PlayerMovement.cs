@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private float accel = 100.0f;
     private float turnSpeed = 0.1f;
 
-    private Rigidbody rigidbody;
-    public Camera camera;
+    new private Rigidbody rigidbody;
+    new public Camera camera;
 
     private Vector3 desiredMoveDirection;
     private float camTimer = 1.0f;
