@@ -418,7 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1866751016}
   player: {fileID: 1212937083}
-  turnSpeed: 5
+  turnSpeed: 10
   rotateToPlayer: 0
 --- !u!1 &1212937077
 GameObject:
@@ -455,7 +455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 1017116434}
   newMove: 1
-  resetCamTimer: 1.5
+  resetCamTimer: 2.5
+  speed: 17.5
 --- !u!65 &1212937080
 BoxCollider:
   m_ObjectHideFlags: 0
