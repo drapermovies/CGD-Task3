@@ -13,16 +13,19 @@ public class FollowCamera : MonoBehaviour
 
     public bool rotateToPlayer = false;
 
+    private Vector3 playerForward;
+    private Vector3 playerRight;
+    private Vector3 playerUp;
+
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(0, 0.6f, -2.0f);
+        offset = new Vector3(0, 0.5f, -1.75f);
         defaultOffset = offset;
     }
 
     void LateUpdate()
     {
-        
         if (!rotateToPlayer)
         {
             if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
@@ -37,7 +40,16 @@ public class FollowCamera : MonoBehaviour
                 }
             }
             offset = Quaternion.Euler(0, Input.GetAxis("Mouse X"), 0) * offset;
-            offset = Quaternion.AngleAxis(-Input.GetAxis("Mouse Y"), transform.right) * offset;
+            Vector3 newOffset = Quaternion.AngleAxis(-Input.GetAxis("Mouse Y"), transform.right) * offset;
+
+            if (newOffset.y < -0.5f || newOffset.y > 1.0f)
+            {
+                newOffset.y = Mathf.Clamp(newOffset.y, -0.5f, 1.0f);
+            }
+            else
+            {
+                offset = newOffset;
+            }
             transform.position = target.position + offset;
             transform.LookAt(target);
         }
@@ -45,23 +57,30 @@ public class FollowCamera : MonoBehaviour
         {
             Vector3 camForward = transform.forward;
             camForward.y = 0;
-            if (Vector3.Angle(player.forward, camForward) < 0.1f)
+            if (Vector3.Angle(playerForward, camForward) < 0.1f)
             {
                 rotateToPlayer = false;
             }
             else
             {
-                if (Vector3.Angle(player.forward, camForward) > 90f)
+                if (Vector3.Angle(playerForward, camForward) > 100f)
                 {
-                    offset = Quaternion.Euler(player.up * defaultOffset.y) * offset;
+                    offset = offset + (((-playerForward * defaultOffset.x) + (playerUp * defaultOffset.y) + (playerRight * defaultOffset.z) - offset));
                 }
                 else
                 {
-                    offset = offset + (((player.right * defaultOffset.x) + (player.up * defaultOffset.y) + (player.forward * defaultOffset.z) - offset) * Time.deltaTime * 10);
+                    offset = offset + (((playerRight * defaultOffset.x) + (playerUp * defaultOffset.y) + (playerForward * defaultOffset.z) - offset) * Time.deltaTime * 10);
                 }
                 transform.position = target.position + offset;
                 transform.LookAt(target);
             }
         }
+    }
+
+    public void SetNewDirections(Vector3 up, Vector3 forward, Vector3 right)
+    {
+        playerUp = up;
+        playerRight = right;
+        playerForward = forward;
     }
 }

@@ -386,7 +386,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1866751016}
   player: {fileID: 1212937083}
-  turnSpeed: 5
+  turnSpeed: 10
   rotateToPlayer: 0
 --- !u!1 &1212937077
 GameObject:
@@ -453,7 +453,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fd297ba916ca2d49b959d3d7e93a3cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 1017116434}
   newMove: 1
+  resetCamTimer: 2.5
+  speed: 17.5
 --- !u!65 &1212937080
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -570,7 +573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866751015}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.4, z: 0}
+  m_LocalPosition: {x: 1, y: 1.6, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -590,7 +593,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1212937083}
   camera: {fileID: 1017116432}
-  offset: {x: 0, y: 0, z: 0}
 --- !u!33 &1866751018
 MeshFilter:
   m_ObjectHideFlags: 0

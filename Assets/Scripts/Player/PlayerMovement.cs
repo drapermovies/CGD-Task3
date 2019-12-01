@@ -8,25 +8,27 @@ public class PlayerMovement : MonoBehaviour
     {
         public float forward;
         public float horizontal;
-        //public float vertical;
+        public float vertical;
     }
 
     private velocity vel;
     private float accel = 100.0f;
     private float turnSpeed = 0.1f;
 
-    private Rigidbody rigidbody;
-    private Camera camera;
+    new private Rigidbody rigidbody;
+    new public Camera camera;
 
     private Vector3 desiredMoveDirection;
     private float camTimer = 1.0f;
     public bool newMove = true;
+    public float resetCamTimer = 1.0f;
+    public float speed = 15.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = gameObject.GetComponent<Rigidbody>();
-        camera = Camera.main;
+        camTimer = resetCamTimer;
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         {
             vel.horizontal += accel * Time.deltaTime;
         }
-        vel.horizontal = Mathf.Clamp(vel.horizontal, -8.0f, 8.0f);
+        vel.horizontal = Mathf.Clamp(vel.horizontal, -20.0f, 20.0f);
         //deceleration
         if (!Input.GetKey("a") || !Input.GetKey("d"))
         {
@@ -75,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         {
             vel.forward -= accel * Time.deltaTime;
         }
-        vel.forward = Mathf.Clamp(vel.forward, -8.0f, 8.0f);
+        vel.forward = Mathf.Clamp(vel.forward, -20.0f, 20.0f);
         //deceleration
         if (!Input.GetKey("w") || !Input.GetKey("s"))
         {
@@ -100,10 +102,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //jump
-        if (rigidbody.velocity.y == 0.0f)
+        if (Input.GetKey(KeyCode.Space))
         {
-            rigidbody.AddForce(new Vector3(0, 30, 0) * Input.GetAxis("Jump"), ForceMode.Impulse);
+            if (rigidbody.velocity.y <= 0.2f && rigidbody.velocity.y >= -0.2f)
+            {
+                if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 0.1f))
+                {
+                    rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
+                }
+            }
         }
 
         if (vel.forward != 0.0f || vel.horizontal != 0.0f)
@@ -119,23 +126,26 @@ public class PlayerMovement : MonoBehaviour
             //camera direction with player velocity applied
             if (newMove)
             {
-                desiredMoveDirection = camForward * vel.forward + camRight * vel.horizontal;
+                desiredMoveDirection = ((camForward * vel.forward) + (camRight * vel.horizontal)) * Time.deltaTime * speed;
             }
-
-            //Move relative to camera's rotation
-            transform.position = transform.position + desiredMoveDirection * Time.deltaTime;
-
             //rotate
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), turnSpeed);
+            transform.rotation = new Quaternion(0, transform.rotation.y, 0,transform.rotation.w);
+            //Move relative to camera's rotation
+            //transform.position = transform.position + desiredMoveDirection * Time.deltaTime;
+            desiredMoveDirection.y = rigidbody.velocity.y;
+            rigidbody.velocity = desiredMoveDirection;
+
 
             //if camera isnt facing general direction of player movement
             //countdown and set rotation to face player direction
-            if (Vector3.Angle(camForward, transform.forward) > 30.0f && newMove)
+            if (Vector3.Angle(camForward, transform.forward) > 50.0f && newMove)
             {
                 camTimer -= Time.deltaTime;
                 if (camTimer <= 0.0f)
                 {
                     camera.GetComponent<FollowCamera>().rotateToPlayer = true;
+                    camera.GetComponent<FollowCamera>().SetNewDirections(transform.up, transform.forward, transform.right);
                     newMove = false;
                 }
             }
@@ -153,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (camTimer < 1.0f)
         {
-            camTimer = 1.0f;
+            camTimer = resetCamTimer;
         }
     }
 }
