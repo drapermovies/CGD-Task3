@@ -36,6 +36,8 @@ public class EnemyAI : MonoBehaviour
 
     private float vSpeed = 0.0f;
     private float new_bump = 0.0f;
+
+    private Transform tform;
     #endregion
 
     void Awake()
@@ -43,6 +45,7 @@ public class EnemyAI : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         anim.SetBool("isIdle", true);
+        tform = GetComponent<Transform>();
 
         //Loop through children to get the correct children we need
         foreach(Transform child in GetComponentsInChildren<Transform>())
@@ -56,6 +59,8 @@ public class EnemyAI : MonoBehaviour
                 bump_particles = child.GetComponent<ParticleSystem>();
             }
         }
+
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
     }
     void Start()
     {
@@ -113,7 +118,6 @@ public class EnemyAI : MonoBehaviour
         {
             agent.destination = target_pos;
             Debug.Log("Destination: " + agent.destination);
-            Debug.Break();
         }
     }
 
@@ -136,6 +140,7 @@ public class EnemyAI : MonoBehaviour
         GetComponent<NavMeshAgent>().speed = 1.3f; //Move slower
     }
 
+    //Play Idle Animation and find new waypoint
     public void Idle()
     {
         anim.SetBool("isIdle", true);
