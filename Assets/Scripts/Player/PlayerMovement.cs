@@ -102,12 +102,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             if (rigidbody.velocity.y <= 0.2f && rigidbody.velocity.y >= -0.2f)
             {
-                rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
-                vel.vertical = 30.0f;
+                if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 0.1f))
+                {
+                    rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
+                }
             }
         }
 
@@ -126,13 +128,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 desiredMoveDirection = ((camForward * vel.forward) + (camRight * vel.horizontal)) * Time.deltaTime * speed;
             }
-
-            //Move relative to camera's rotation
-            //transform.position = transform.position + desiredMoveDirection * Time.deltaTime;
-            rigidbody.velocity = desiredMoveDirection;
-
             //rotate
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), turnSpeed);
+            transform.rotation = new Quaternion(0, transform.rotation.y, 0,transform.rotation.w);
+            //Move relative to camera's rotation
+            //transform.position = transform.position + desiredMoveDirection * Time.deltaTime;
+            desiredMoveDirection.y = rigidbody.velocity.y;
+            rigidbody.velocity = desiredMoveDirection;
+
 
             //if camera isnt facing general direction of player movement
             //countdown and set rotation to face player direction
