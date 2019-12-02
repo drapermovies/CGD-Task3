@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 0.1f))
                 {
-                    rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
+                    rigidbody.AddForce(new Vector3(0, 10, 0), ForceMode.Impulse);
                 }
             }
         }
