@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6110973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1571,7 +1571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &571748125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3803,6 +3803,8 @@ MonoBehaviour:
   optionsMenu: {fileID: 926700780}
   inMainMenu: 1
   inOptionsMenu: 0
+  inEndMenu: 0
+  inPauseMenu: 0
   currentlyTransitioning: 0
   mainCamera: {fileID: 65089415}
   animator: {fileID: 65089414}

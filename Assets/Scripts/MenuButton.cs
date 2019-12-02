@@ -113,6 +113,25 @@ public class MenuButton : MonoBehaviour
                     break;
             }
         }
+        else if (canvas.inEndMenu)
+        {
+            switch (menuController.lockedIndex)
+            {
+                case 0:
+                    Debug.Log("Play the Game");
+                    break;
+                case 1:
+                    Debug.Log("Go back to Main Menu");
+                    canvas.inMainMenu = true;
+                    canvas.inEndMenu = false;
+                    switchMenuDisplay();
+                    break;
+                case 2:
+                    Debug.Log("Exiting Game");
+                    Application.Quit();
+                    break;
+            }
+        }
     }
 
     private void switchMenuDisplay()

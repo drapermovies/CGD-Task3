@@ -7,8 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject optionsMenu;
+
     public bool inMainMenu = true;
     public bool inOptionsMenu = false;
+    public bool inEndMenu = false;
+    public bool inPauseMenu = false;
     public bool currentlyTransitioning = false;
     [SerializeField] MainMenuCamera mainCamera;
     [SerializeField] Animator animator;
