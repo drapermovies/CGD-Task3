@@ -73,16 +73,17 @@ public class MenuButton : MonoBehaviour
     {
 
         //following code occurs once the fade out transition animation has ended
-
         // transitioning from main menu
         if (canvas.inMainMenu)
         {
             switch (menuController.lockedIndex)
             {
                 case 0:
+                    //FOR AUDIO FRIENDS, this code occurs when player has pressed/clicked 'NEW GAME' (haven't made it go to new scene yet lol)
                     Debug.Log("Play the Game");
                     break;
                 case 1:
+                    //FOR AUDIO FRIENDS, this code occurs when player has pressed/clicked 'OPTIONS' (less intense sfx, can be reused for the rest of the cases tbh)
                     Debug.Log("Options Menu");
                     canvas.inOptionsMenu = true;
                     canvas.inMainMenu = false;

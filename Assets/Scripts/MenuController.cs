@@ -40,6 +40,8 @@ public class MenuController : MonoBehaviour
 
     private void menuScrolling()
     {
+        //FOR AUDIO FRIENDS, this is the code that changes what button is being selected on the menu
+
         if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             if (index < maxIndex)
