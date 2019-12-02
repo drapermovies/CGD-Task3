@@ -11,23 +11,26 @@ public class MenuController : MonoBehaviour
     [SerializeField] int maxIndex;
     public AudioSource audioSource;
 
+    [SerializeField] MainMenu canvas;
     public GameObject mainMenu;
     public GameObject optionsMenu;
 
-    public bool currentlyTransitioning = false;
-    public bool hasTransitionedIn = false;
     public bool hasTransitionedOut = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (canvas.inMainMenu == true)
+        {
+            optionsMenu.gameObject.SetActive(false);
+        }
         audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Mouse ScrollWheel") != 0) && currentlyTransitioning == false)
+        if ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Mouse ScrollWheel") != 0) && canvas.currentlyTransitioning == false)
         {
             if (!keyDown)
             {
@@ -35,7 +38,7 @@ public class MenuController : MonoBehaviour
                 keyDown = true;
             }
         }
-        else 
+        else
         {
             keyDown = false;
         }

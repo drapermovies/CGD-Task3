@@ -23,21 +23,26 @@ public class MenuButton : MonoBehaviour
     {
         universalAnimation();
         individualAnimation();
+
+        //debug testing
+        if (canvas.currentlyTransitioning == true)
+        {
+            animator.SetBool("transitionedIn", false);
+        }
     }
 
     private void universalAnimation()
     {
-        //transition buttons in
-        if (menuController.hasTransitionedIn == false)
-        {
-            animator.SetBool("transitionedIn", true);
-            menuController.currentlyTransitioning = false;
-        }
 
-        //transition buttons out
+        //transition buttons 
         if (menuController.hasTransitionedOut == true)
         {
             animator.SetBool("transitionedOut", false);
+        }
+        else
+        {
+            canvas.currentlyTransitioning = false;
+            animator.SetBool("transitionedIn", true);
         }
     }
 
@@ -65,8 +70,8 @@ public class MenuButton : MonoBehaviour
     {
         animator.SetBool("pressed", true);
         animatorFunctions.disableOnce = true;
+        canvas.currentlyTransitioning = true;
         menuController.hasTransitionedOut = true;
-        menuController.currentlyTransitioning = true;
         menuController.lockedIndex = menuController.index;
     }
 
@@ -85,14 +90,11 @@ public class MenuButton : MonoBehaviour
                     break;
                 case 1:
                     Debug.Log("Options Menu");
-                    animator.SetBool("transitionedIn", false);
-                    animator.SetBool("transitionedOut", true);
-                    animator.SetBool("pressed", false);
-                    menuController.hasTransitionedOut = false;
+                    switchMenuDisplay();
                     canvas.inOptionsMenu = true;
                     canvas.inMainMenu = false;
-                    menuController.mainMenu.gameObject.SetActive(false);
                     menuController.optionsMenu.gameObject.SetActive(true);
+                    menuController.mainMenu.gameObject.SetActive(false);
                     break;
                 case 2:
                     Debug.Log("Exiting Game");
@@ -112,27 +114,35 @@ public class MenuButton : MonoBehaviour
                     break;
                 case 2:
                     Debug.Log("Go back to Main Menu");
-                    animator.SetBool("transitionedIn", false);
-                    animator.SetBool("transitionedOut", true);
-                    animator.SetBool("pressed", false);
-                    menuController.hasTransitionedOut = false;
+                    switchMenuDisplay();
                     canvas.inMainMenu = true;
                     canvas.inOptionsMenu = false;
-                    menuController.optionsMenu.gameObject.SetActive(false);
                     menuController.mainMenu.gameObject.SetActive(true);
+                    menuController.optionsMenu.gameObject.SetActive(false);
                     break;
             }
         }
     }
 
+    private void switchMenuDisplay()
+    {
+        menuController.hasTransitionedOut = false;
+        animator.SetBool("pressed", false);
+        animator.SetBool("transitionedOut", true);
+        animator.SetBool("transitionedIn", false);
+    }
+
     public void mouseHighlight()
     {
-        menuController.index = thisIndex;
+        if (canvas.currentlyTransitioning == false)
+        {
+            menuController.index = thisIndex;
+        }
     }
 
     public void mouseUnhighlight()
     {
-        if (menuController.currentlyTransitioning == false)
+        if (canvas.currentlyTransitioning == false)
         {
             menuController.index = 10;
         }
@@ -141,11 +151,15 @@ public class MenuButton : MonoBehaviour
 
     public void mouseSelect()
     {
-        animator.SetBool("pressed", true);
-        if (animator.GetBool("pressed"))
+        if (canvas.currentlyTransitioning == false)
         {
-            menuTransitionOut();
+            animator.SetBool("pressed", true);
+            if (animator.GetBool("pressed"))
+            {
+                menuTransitionOut();
+            }
         }
+
     }
 
 
