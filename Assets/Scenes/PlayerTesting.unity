@@ -262,10 +262,10 @@ RectTransform:
   m_Father: {fileID: 1211139976}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -150, y: 470}
-  m_SizeDelta: {x: -250, y: -505}
+  m_AnchorMin: {x: 0, y: 0.77}
+  m_AnchorMax: {x: 0, y: 0.77}
+  m_AnchoredPosition: {x: 500, y: -78}
+  m_SizeDelta: {x: 300, y: 31}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &487388265
 MonoBehaviour:
@@ -306,13 +306,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Enemies: \n"
+  m_Text: "Enemies captured: \n"
 --- !u!222 &487388267
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -445,10 +445,10 @@ RectTransform:
   m_Father: {fileID: 1211139976}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -150, y: 503}
-  m_SizeDelta: {x: -250, y: -503}
+  m_AnchorMin: {x: 0, y: 0.8}
+  m_AnchorMax: {x: 0, y: 0.8}
+  m_AnchoredPosition: {x: 500, y: -66}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &634811796
 MonoBehaviour:
@@ -462,6 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bf8d641c992b340a29e45cd27e58e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCounter: {fileID: 0}
   timer: 3
 --- !u!114 &634811797
 MonoBehaviour:
@@ -490,7 +491,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
