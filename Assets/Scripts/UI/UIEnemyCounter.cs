@@ -19,7 +19,7 @@ public class UIEnemyCounter : MonoBehaviour
         counterText = gameObject.GetComponent<Text>();
         startText = counterText.text;
         rectTransform = GetComponent<RectTransform>();
-        counterText.text += "0/5";
+        counterText.text = startText + "0/5";
     }
 
     private void Update()

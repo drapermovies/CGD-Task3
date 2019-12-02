@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class UITimer : MonoBehaviour
 {
     private Text timerText;
-    public GameObject enemyCounter;
     public float timer;
     private string startText;
 
@@ -14,12 +13,17 @@ public class UITimer : MonoBehaviour
     private Vector2 pos = new Vector3(0, 0.15f);
     private Vector2 velocity = Vector2.zero;
 
+    private bool inPosition = false;
+    public GameObject image;
+
     // Start is called before the first frame update
     void Start()
     {
         timerText = gameObject.GetComponent<Text>();
         startText = timerText.text;
+        timerText.text = startText + "03:00:00";
         timer *= 60;
+        timer--;
         rectTransform = GetComponent<RectTransform>();
     }
 
@@ -32,6 +36,11 @@ public class UITimer : MonoBehaviour
         }
         else
         {
+            if(!inPosition)
+            {
+                inPosition = true;
+                Destroy(image);
+            }
             timer -= Time.deltaTime;
 
             if(timer <= 0.0f)
@@ -39,7 +48,7 @@ public class UITimer : MonoBehaviour
                 //failure state
             }
 
-            var minutes = timer / 60; //Divide the guiTime by sixty to get the minutes.
+            var minutes = Mathf.Floor(timer / 60); //Divide the guiTime by sixty to get the minutes.
             var seconds = timer % 60;//Use the euclidean division for the seconds.
             var fraction = (timer * 100) % 100;
 
