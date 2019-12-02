@@ -23,12 +23,6 @@ public class MenuButton : MonoBehaviour
     {
         universalAnimation();
         individualAnimation();
-
-        //debug testing
-        if (canvas.currentlyTransitioning == true)
-        {
-            animator.SetBool("transitionedIn", false);
-        }
     }
 
     private void universalAnimation()
@@ -41,8 +35,8 @@ public class MenuButton : MonoBehaviour
         }
         else
         {
-            canvas.currentlyTransitioning = false;
             animator.SetBool("transitionedIn", true);
+            canvas.currentlyTransitioning = false;
         }
     }
 
@@ -68,10 +62,10 @@ public class MenuButton : MonoBehaviour
 
     public void menuTransitionOut()
     {
-        animator.SetBool("pressed", true);
         animatorFunctions.disableOnce = true;
         canvas.currentlyTransitioning = true;
         menuController.hasTransitionedOut = true;
+        animator.SetBool("pressed", true);
         menuController.lockedIndex = menuController.index;
     }
 
@@ -90,11 +84,9 @@ public class MenuButton : MonoBehaviour
                     break;
                 case 1:
                     Debug.Log("Options Menu");
-                    switchMenuDisplay();
                     canvas.inOptionsMenu = true;
                     canvas.inMainMenu = false;
-                    menuController.optionsMenu.gameObject.SetActive(true);
-                    menuController.mainMenu.gameObject.SetActive(false);
+                    switchMenuDisplay();
                     break;
                 case 2:
                     Debug.Log("Exiting Game");
@@ -114,11 +106,9 @@ public class MenuButton : MonoBehaviour
                     break;
                 case 2:
                     Debug.Log("Go back to Main Menu");
-                    switchMenuDisplay();
                     canvas.inMainMenu = true;
                     canvas.inOptionsMenu = false;
-                    menuController.mainMenu.gameObject.SetActive(true);
-                    menuController.optionsMenu.gameObject.SetActive(false);
+                    switchMenuDisplay();
                     break;
             }
         }
@@ -126,10 +116,10 @@ public class MenuButton : MonoBehaviour
 
     private void switchMenuDisplay()
     {
-        menuController.hasTransitionedOut = false;
         animator.SetBool("pressed", false);
         animator.SetBool("transitionedOut", true);
         animator.SetBool("transitionedIn", false);
+        menuController.hasTransitionedOut = false;
     }
 
     public void mouseHighlight()
@@ -161,6 +151,4 @@ public class MenuButton : MonoBehaviour
         }
 
     }
-
-
 }

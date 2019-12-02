@@ -12,18 +12,12 @@ public class MenuController : MonoBehaviour
     public AudioSource audioSource;
 
     [SerializeField] MainMenu canvas;
-    public GameObject mainMenu;
-    public GameObject optionsMenu;
 
     public bool hasTransitionedOut = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (canvas.inMainMenu == true)
-        {
-            optionsMenu.gameObject.SetActive(false);
-        }
         audioSource = GetComponent<AudioSource>();
     }
 

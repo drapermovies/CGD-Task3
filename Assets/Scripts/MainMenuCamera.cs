@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MainMenuCamera : MonoBehaviour
 {
-    public bool cameraToOptions = false;
-    public bool cameraToMain = false;
 
     // Start is called before the first frame update
     void Start()

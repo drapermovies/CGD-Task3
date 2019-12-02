@@ -1243,8 +1243,6 @@ MonoBehaviour:
   maxIndex: 2
   audioSource: {fileID: 0}
   canvas: {fileID: 1754695796}
-  mainMenu: {fileID: 571748124}
-  optionsMenu: {fileID: 926700780}
   hasTransitionedOut: 0
 --- !u!1 &701394492
 GameObject:
@@ -1873,7 +1871,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 926700781}
-  - component: {fileID: 926700783}
   - component: {fileID: 926700782}
   m_Layer: 5
   m_Name: Options Menu
@@ -1881,7 +1878,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &926700781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1922,26 +1919,7 @@ MonoBehaviour:
   maxIndex: 2
   audioSource: {fileID: 0}
   canvas: {fileID: 1754695796}
-  mainMenu: {fileID: 571748124}
-  optionsMenu: {fileID: 926700780}
   hasTransitionedOut: 0
---- !u!114 &926700783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926700780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3d06bc5437bc9a42983a2e3f94de4ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inMainMenu: 1
-  inOptionsMenu: 0
-  currentlyTransitioning: 0
-  mainCamera: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!1 &927518318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +2808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d06bc5437bc9a42983a2e3f94de4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 571748124}
+  optionsMenu: {fileID: 926700780}
   inMainMenu: 1
   inOptionsMenu: 0
   currentlyTransitioning: 0
