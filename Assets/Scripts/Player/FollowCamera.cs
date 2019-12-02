@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    
+    public Vector3 baseOffset;
+
     public Transform target;
     public Transform player;
     public float turnSpeed = 10.0f;
@@ -20,7 +21,7 @@ public class FollowCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(0, 0.5f, -1.75f);
+        offset = baseOffset;
         defaultOffset = offset;
     }
 

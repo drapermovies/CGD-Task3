@@ -16,6 +16,7 @@ public class PlayerCapture : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Destroy(collision.gameObject);
+                FindObjectOfType<UIEnemyCounter>().updateCounter();
                 //play animation
             }
         }

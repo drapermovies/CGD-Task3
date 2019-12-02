@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     {
         public float forward;
         public float horizontal;
-        public float vertical;
+        //public float vertical;
     }
 
     private velocity vel;
