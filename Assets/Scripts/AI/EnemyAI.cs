@@ -34,6 +34,8 @@ public class EnemyAI : MonoBehaviour
     private float vSpeed = 0.0f;
     private float new_bump = 0.0f;
 
+    private bool has_died = false;
+
     private Transform tform;
     #endregion
 
@@ -72,20 +74,18 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     {
-        CheckIdleState();
-
-        FindPlayer();
-
-        BumpCheck();
-
-        if (Input.GetKeyDown("space") && anim.GetBool("isIdle"))
+        if (!has_died)
         {
-            Jump();
-        }
+            CheckIdleState();
 
-        if (anim.GetBool("isRun") && !run_particles.isPlaying)
-        {
-            run_particles.Play();
+            FindPlayer();
+
+            BumpCheck();
+
+            if (anim.GetBool("isRun") && !run_particles.isPlaying)
+            {
+                run_particles.Play();
+            }
         }
     }
 
@@ -112,7 +112,6 @@ public class EnemyAI : MonoBehaviour
     {
         foreach(NavMeshAgent agent in nav_agents)
         {
-            transform.position.Normalize();
             if(Vector3.Distance(transform.position, agent.destination) <= bump_range)
             {
                 Idle();
@@ -122,7 +121,7 @@ public class EnemyAI : MonoBehaviour
 
     public void CrippledWalk()
     {
-        anim.SetBool("crippled", !(anim.GetBool("crippled")));
+        anim.SetBool("crippled", true);
         anim.SetBool("isIdle", false);
 
         GetComponent<NavMeshAgent>().speed = 1.3f; //Move slower
@@ -148,6 +147,7 @@ public class EnemyAI : MonoBehaviour
     {
         anim.SetBool("isRun", !(anim.GetBool("isRun")));
         anim.SetBool("isIdle", false);
+        anim.SetBool("crippled", false);
 
         GetComponent<NavMeshAgent>().speed = 3.5f; //Move faster
     }
@@ -178,12 +178,10 @@ public class EnemyAI : MonoBehaviour
                 nearest_obj = distance;
                 ChangeDistance(obj.transform.lossyScale);
 
-                Debug.Log(Vector3.Distance(this.transform.position, obj.transform.position));
-
                 if (Vector3.Distance(this.transform.position, obj.transform.position) <= new_bump)
                 {
                     Bump();
-                    Debug.Break();
+                    //Debug.Break();
                 }
                 else
                 {
