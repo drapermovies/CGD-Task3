@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     {
         public float forward;
         public float horizontal;
-        //public float vertical;
+        public float vertical;
     }
 
     private velocity vel;
@@ -17,18 +17,21 @@ public class PlayerMovement : MonoBehaviour
 
     new private Rigidbody rigidbody;
     new public Camera camera;
+    private Animator anim;
 
     private Vector3 desiredMoveDirection;
     private float camTimer = 1.0f;
     public bool newMove = true;
     public float resetCamTimer = 1.0f;
-    public float speed = 15.0f;
+    public float speed = 7.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = gameObject.GetComponent<Rigidbody>();
         camTimer = resetCamTimer;
+        anim = gameObject.GetComponent<Animator>();
+        anim.SetLayerWeight(1, 1.0f);
     }
 
     // Update is called once per frame
@@ -67,6 +70,8 @@ public class PlayerMovement : MonoBehaviour
                     vel.horizontal = 0.0f;
                 }
             }
+
+            ChangeBool("Idle", true);
         }
 
         if (Input.GetKey("w"))
@@ -97,6 +102,45 @@ public class PlayerMovement : MonoBehaviour
                     vel.forward = 0.0f;
                 }
             }
+            ChangeBool("Idle", true);
+        }
+
+        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
+        {
+
+           if (Input.GetKey("left shift"))
+           {
+             speed = 15.0f;
+             ChangeBool("Running", true);
+           }
+           
+           else
+           {
+              speed = 7.5f;
+              ChangeBool("Walking", true);
+           }
+
+        }
+
+        Debug.Log(anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping"));
+
+        if (Input.GetMouseButton(0) && (Input.GetKey("left shift")) == false)
+        {
+            if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping")))
+            {
+                anim.SetBool("Capturing", false);
+            }
+
+            else
+            {
+                anim.SetBool("Capturing", true);
+                speed = 5.0f;
+            }
+        }
+
+        else
+        {
+            anim.SetBool("Capturing", false);
         }
     }
 
@@ -109,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 0.1f))
                 {
                     rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
+                    anim.SetTrigger("JumpingTrigger");
                 }
             }
         }
@@ -117,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 camForward = camera.transform.forward;
             Vector3 camRight = camera.transform.right;
-            
+
             camForward.y = 0f;
             camRight.y = 0f;
             camForward.Normalize();
@@ -129,8 +174,8 @@ public class PlayerMovement : MonoBehaviour
                 desiredMoveDirection = ((camForward * vel.forward) + (camRight * vel.horizontal)) * Time.deltaTime * speed;
             }
             //rotate
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection, transform.up), turnSpeed);
-            transform.rotation = new Quaternion(0, transform.rotation.y, 0,transform.rotation.w);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), turnSpeed);
+            transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
             //Move relative to camera's rotation
             //transform.position = transform.position + desiredMoveDirection * Time.deltaTime;
             desiredMoveDirection.y = rigidbody.velocity.y;
@@ -165,5 +210,14 @@ public class PlayerMovement : MonoBehaviour
         {
             camTimer = resetCamTimer;
         }
+    }
+
+    private void ChangeBool(string toggleBool, bool boolState)
+    {
+        anim.SetBool("Idle", false);
+        anim.SetBool("Walking", false);
+        anim.SetBool("Running", false);
+        anim.SetBool(toggleBool, boolState);
+        return;
     }
 }
