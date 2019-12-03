@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIEnemyCounter : MonoBehaviour
 {
     private Text counterText;
-    private int counter;
+    private int counter = 0;
     private string startText;
     public int maxCounter;
 
@@ -17,11 +17,10 @@ public class UIEnemyCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        counter = maxCounter;
         counterText = gameObject.GetComponent<Text>();
         startText = counterText.text;
         rectTransform = GetComponent<RectTransform>();
-        counterText.text = startText + "0/" + maxCounter;
+        counterText.text = startText + counter + "/" + maxCounter;
     }
 
     private void Update()
@@ -34,7 +33,7 @@ public class UIEnemyCounter : MonoBehaviour
 
     public void updateCounter()
     {
-        counter--;
+        counter++;
         counterText.text = startText + counter + "/" + maxCounter;
         if(counter == 0)
         {
