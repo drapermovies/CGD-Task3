@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public float resetCamTimer = 1.0f;
     public float speed = 7.5f;
 
+    public GameObject crosshair;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,15 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKeyDown("w") || Input.GetKeyDown("s") || Input.GetKeyDown("a") || Input.GetKeyDown("d")) && !newMove)
         {
             newMove = true;
+        }
+        else
+        {
+            if(vel.forward == 0 && vel.horizontal == 0)
+            {
+                Vector3 newVel = Vector3.zero;
+                newVel.y = rigidbody.velocity.y;
+                rigidbody.velocity = newVel;
+            }
         }
 
         if (Input.GetKey("a"))
@@ -110,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
            if (Input.GetKey("left shift"))
            {
-             speed = 15.0f;
+             speed = 14.0f;
              ChangeBool("Running", true);
            }
            
@@ -122,23 +133,30 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButton(0) && (Input.GetKey("left shift")) == false)
+        if (Input.GetMouseButton(1) && (Input.GetKey("left shift")) == false)
         {
             if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping")))
             {
                 anim.SetBool("Capturing", false);
+                crosshair.gameObject.SetActive(false);
             }
 
             else
             {
                 anim.SetBool("Capturing", true);
                 speed = 5.0f;
+                crosshair.gameObject.SetActive(true);
             }
         }
 
         else
         {
             anim.SetBool("Capturing", false);
+            crosshair.gameObject.SetActive(false);
+        }
+        if(anim.GetBool("Capturing") && Input.GetMouseButtonDown(0))
+        {
+            FindObjectOfType<PlayerCapture>().Capture();
         }
     }
 
@@ -156,6 +174,20 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if (anim.GetBool("Capturing"))
+        {
+            Vector3 camForward = camera.transform.forward;
+            Vector3 camRight = camera.transform.right;
+
+            camForward.y = 0f;
+            camRight.y = 0f;
+            camForward.Normalize();
+            camRight.Normalize();
+
+            var halfWayVector = (camForward + camRight).normalized;
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(halfWayVector), turnSpeed);
+        }
+
         if (vel.forward != 0.0f || vel.horizontal != 0.0f)
         {
             Vector3 camForward = camera.transform.forward;
@@ -167,12 +199,16 @@ public class PlayerMovement : MonoBehaviour
             camRight.Normalize();
 
             //camera direction with player velocity applied
-            if (newMove)
+            if(newMove)
             {
                 desiredMoveDirection = ((camForward * vel.forward) + (camRight * vel.horizontal)) * Time.deltaTime * speed;
             }
+
             //rotate
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), turnSpeed);
+            if(!anim.GetBool("Capturing"))
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), turnSpeed);
+            }
             transform.rotation = new Quaternion(0, transform.rotation.y, 0, transform.rotation.w);
             //Move relative to camera's rotation
             //transform.position = transform.position + desiredMoveDirection * Time.deltaTime;
