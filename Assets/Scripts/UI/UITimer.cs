@@ -31,22 +31,28 @@ public class UITimer : MonoBehaviour
         if (countDown)
         {
             timer -= Time.deltaTime;
-            if(timer <= 15.0f)
+            if (timer <= 30.0f)
             {
-                timerText.color = Color.red;
-                Vector3 newScale = transform.localScale;
-                newScale.x = Mathf.PingPong(Time.time, 0.5f) + 1;
-                newScale.y = newScale.x;
-                newScale.z = newScale.y;
-                transform.localScale = newScale;
-
-                if (timer <= 0.0f)
+                if(timerText.color != Color.red)
                 {
-                    //failure state
-                    //GAME OVER
-                    Debug.Log("Game Over");
-                    PlayerPrefs.SetFloat("GameState", 2);
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                    timerText.color = Color.red;
+                }                
+                if (timer <= 15.0f)
+                {
+                    Vector3 newScale = transform.localScale;
+                    newScale.x = Mathf.PingPong(Time.time, 0.5f) + 1;
+                    newScale.y = newScale.x;
+                    newScale.z = newScale.y;
+                    transform.localScale = newScale;
+
+                    if (timer <= 0.0f)
+                    {
+                        //failure state
+                        //GAME OVER
+                        //Debug.Log("Game Over");
+                        PlayerPrefs.SetFloat("GameState", 2);
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                    }
                 }
             }
 

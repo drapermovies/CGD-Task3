@@ -103,7 +103,7 @@ public class EnemyAI : MonoBehaviour
         foreach (NavMeshAgent agent in nav_agents)
         {
             agent.destination = target_pos;
-            Debug.Log("Destination: " + agent.destination);
+            //Debug.Log("Destination: " + agent.destination);
         }
     }
 
@@ -135,7 +135,7 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("crippled", false);
         anim.SetBool("dancing", false);
 
-        Debug.Log("Idle");
+        //Debug.Log("Idle");
 
         run_particles.Clear();
         run_particles.Stop();
@@ -237,7 +237,7 @@ public class EnemyAI : MonoBehaviour
             nearest_point = waypoints[random]; 
         }
 
-        Debug.Log("Moving to " + nearest_point);
+       // Debug.Log("Moving to " + nearest_point);
         UpdateTargets(nearest_point);
     }
 
@@ -259,7 +259,7 @@ public class EnemyAI : MonoBehaviour
                 Run();
                 UpdateTargets(newPos);
 
-                Debug.Log("<color=red>AAHHH!!! SCARY PLAYER!!!</color>");
+               // Debug.Log("<color=red>AAHHH!!! SCARY PLAYER!!!</color>");
 
                 return;
             }

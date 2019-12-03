@@ -36,11 +36,11 @@ public class UIEnemyCounter : MonoBehaviour
     {
         counter++;
         counterText.text = startText + counter + "/" + maxCounter;
-        if(counter == 0)
+        if(counter == maxCounter)
         {
             //win state
             //YOU WIN
-            Debug.Log("Victory");
+            //Debug.Log("Victory");
             PlayerPrefs.SetFloat("GameState", 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }

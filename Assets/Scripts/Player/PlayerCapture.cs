@@ -15,6 +15,7 @@ public class PlayerCapture : MonoBehaviour
 
     public void Capture()
     {
+        bool success = false;
         foreach(Collider col in TriggerList)
         {
             if(col.gameObject.tag == "Enemy")
@@ -24,11 +25,18 @@ public class PlayerCapture : MonoBehaviour
                     enemyList.Add(col.gameObject);
                     col.gameObject.SetActive(false);
                     FindObjectOfType<UIEnemyCounter>().updateCounter();
-                    //play capture animation
+                    success = true;
                 }
             }
         }
-        //if no enemy play failed capture animation
+        if(success)
+        {
+            //play successful capture anim + sound
+        }
+        else
+        {
+            //play failed capture animation + sound
+        }
     }
 
     //called when something enters the trigger
