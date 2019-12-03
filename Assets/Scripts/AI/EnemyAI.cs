@@ -95,7 +95,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
+   /* void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
@@ -104,7 +104,8 @@ public class EnemyAI : MonoBehaviour
         {
             Gizmos.DrawCube(point, new Vector3(0.5f, 0.5f, 0.5f));
         }
-    }
+    } 
+    */
 
     public void UpdateTargets(Vector3 target_pos)
     {
