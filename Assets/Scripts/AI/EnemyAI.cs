@@ -172,13 +172,18 @@ public class EnemyAI : MonoBehaviour
         foreach (NavMeshObstacle obj in FindObjectsOfType<NavMeshObstacle>())
         {
             distance = Vector3.Distance(this.transform.position, obj.transform.position);
+
             if (distance < nearest_obj)
             {
                 nearest_obj = distance;
-                ChangeDistance(obj.transform.localScale);
+                ChangeDistance(obj.transform.lossyScale);
+
+                Debug.Log(Vector3.Distance(this.transform.position, obj.transform.position));
+
                 if (Vector3.Distance(this.transform.position, obj.transform.position) <= new_bump)
                 {
                     Bump();
+                    Debug.Break();
                 }
                 else
                 {
@@ -205,7 +210,7 @@ public class EnemyAI : MonoBehaviour
             largest_value = transform.localScale.z;
         }
 
-        new_bump = bump_range + largest_value;
+        new_bump = bump_range + largest_value + 1.2f;
     }
 
     //Go to nearest 'safe' space
