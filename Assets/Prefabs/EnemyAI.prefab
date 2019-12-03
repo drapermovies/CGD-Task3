@@ -344,12 +344,12 @@ PrefabInstance:
     - target: {fileID: 3205175230692702093, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: 0.904
       objectReference: {fileID: 0}
     - target: {fileID: 3205175230692702093, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.615
+      value: -1.185
       objectReference: {fileID: 0}
     - target: {fileID: 3205175230692702093, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
@@ -393,13 +393,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
-      propertyPath: playOnAwake
-      value: 1
+      propertyPath: useRigidbodyForVelocity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
-      propertyPath: useRigidbodyForVelocity
-      value: 0
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
@@ -460,11 +460,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afa3b99d58700a84cb762dc796566e6f, type: 3}
