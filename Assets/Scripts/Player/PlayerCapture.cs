@@ -4,21 +4,47 @@ using UnityEngine;
 
 public class PlayerCapture : MonoBehaviour
 {
+    //The list of colliders currently inside the trigger
+    private List<Collider> TriggerList = new List<Collider>();
+
     // Start is called before the first frame update
     void Start()
-    {        
+    {
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void Capture()
     {
-        if (collision.gameObject.tag == "Enemy")
+        foreach(Collider col in TriggerList)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if(col.gameObject.tag == "Enemy")
             {
-                Destroy(collision.gameObject);
+                Destroy(col.gameObject);
                 FindObjectOfType<UIEnemyCounter>().updateCounter();
-                //play animation
+                //play capture animation
             }
+        }
+        //if no enemy play failed capture animation
+    }
+
+    //called when something enters the trigger
+    private void OnTriggerEnter(Collider other)
+    {
+        //if the object is not already in the list
+        if (!TriggerList.Contains(other))
+        {
+            //add the object to the list
+            TriggerList.Add(other);
+        }
+    }
+
+    //called when something exits the trigger
+    private void OnTriggerExit(Collider other)
+    {
+        //if the object is in the list
+        if (TriggerList.Contains(other))
+        {
+            //remove it from the list
+            TriggerList.Remove(other);
         }
     }
 }
