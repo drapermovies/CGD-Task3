@@ -352,6 +352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
+        type: 3}
       propertyPath: SubModule.enabled
       value: 0
       objectReference: {fileID: 0}
@@ -448,6 +453,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
+        type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
@@ -699,6 +709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
+        type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 820103762318181874, guid: afa3b99d58700a84cb762dc796566e6f,
         type: 3}
