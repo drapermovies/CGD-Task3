@@ -7,12 +7,15 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject optionsMenu;
-    public GameObject endMenu;
+    public GameObject victoryMenu;
+    public GameObject defeatMenu;
 
     public bool inMainMenu = true;
     public bool inOptionsMenu = false;
-    public bool inEndMenu = false;
+    public bool inVictoryMenu = false;
+    public bool inDefeatMenu = false;
     public bool currentlyTransitioning = false;
+    public bool checkedState = false;
 
     [SerializeField] MainMenuCamera mainCamera;
     [SerializeField] Animator animator;
@@ -20,36 +23,72 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
 
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetFloat("GameState", 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        float GameState = PlayerPrefs.GetFloat("GameState");
+        if (!checkedState)
+        {
+            //victory
+            if (GameState == 1)
+            {
+                inVictoryMenu = true;
+            }
+            //defeat
+            else if (GameState == 2)
+            {
+                inDefeatMenu = true;
+            }
+            else
+            {
+                inMainMenu = true;
+            }
+            checkedState = true;
+        }
+
         menuTypeConfiguration();
         cameraTransitions();
+
     }
 
     private void menuTypeConfiguration()
     {
+        //in hindsight, should have been a case, but would be a bit of effort to change.. spare me
         if (inMainMenu)
         {
             mainMenu.gameObject.SetActive(true);
             optionsMenu.gameObject.SetActive(false);
-            endMenu.gameObject.SetActive(false);
-
+            victoryMenu.gameObject.SetActive(false);
+            defeatMenu.gameObject.SetActive(false);
         }
         else if (inOptionsMenu)
         {
             mainMenu.gameObject.SetActive(false);
             optionsMenu.gameObject.SetActive(true);
-            endMenu.gameObject.SetActive(false);
+            victoryMenu.gameObject.SetActive(false);
+            defeatMenu.gameObject.SetActive(false);
         }
-        else if (inEndMenu)
+        else if (inVictoryMenu)
         {
             mainMenu.gameObject.SetActive(false);
             optionsMenu.gameObject.SetActive(false);
-            endMenu.gameObject.SetActive(true);
+            victoryMenu.gameObject.SetActive(true);
+            defeatMenu.gameObject.SetActive(false);
+        }
+        else if (inDefeatMenu)
+        {
+            mainMenu.gameObject.SetActive(false);
+            optionsMenu.gameObject.SetActive(false);
+            victoryMenu.gameObject.SetActive(false);
+            defeatMenu.gameObject.SetActive(true);
         }
     }
 

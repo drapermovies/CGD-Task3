@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UITimer : MonoBehaviour
 {
@@ -43,6 +44,9 @@ public class UITimer : MonoBehaviour
                 {
                     //failure state
                     //GAME OVER
+                    Debug.Log("Game Over");
+                    PlayerPrefs.SetFloat("GameState", 2);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                 }
             }
 
