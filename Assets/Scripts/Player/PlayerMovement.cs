@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         camTimer = resetCamTimer;
         anim = gameObject.GetComponent<Animator>();
         anim.SetLayerWeight(1, 1.0f);
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
