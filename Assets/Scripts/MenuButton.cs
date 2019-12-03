@@ -89,7 +89,7 @@ public class MenuButton : MonoBehaviour
                 case 0:
                     //FOR AUDIO FRIENDS, this code occurs when player has pressed/clicked 'NEW GAME' (haven't made it go to new scene yet lol)
                     Debug.Log("Play the Game");
-                    canvas.inEndMenu = true;
+                    canvas.inVictoryMenu = true;
                     canvas.inMainMenu = false;
                     switchMenuDisplay();
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -127,7 +127,7 @@ public class MenuButton : MonoBehaviour
                     break;
             }
         }
-        else if (canvas.inEndMenu)
+        else if (canvas.inVictoryMenu)
         {
             switch (menuController.lockedIndex)
             {
@@ -138,7 +138,7 @@ public class MenuButton : MonoBehaviour
                 case 1:
                     Debug.Log("Go back to Main Menu");
                     canvas.inMainMenu = true;
-                    canvas.inEndMenu = false;
+                    canvas.inVictoryMenu = false;
                     switchMenuDisplay();
                     break;
                 case 2:
@@ -146,6 +146,27 @@ public class MenuButton : MonoBehaviour
                     Application.Quit();
                     break;
             }
+        }
+        else if (canvas.inDefeatMenu)
+        {
+            switch (menuController.lockedIndex)
+            {
+                case 0:
+                    Debug.Log("Play the Game");
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    break;
+                case 1:
+                    Debug.Log("Go back to Main Menu");
+                    canvas.inMainMenu = true;
+                    canvas.inDefeatMenu = false;
+                    switchMenuDisplay();
+                    break;
+                case 2:
+                    Debug.Log("Exiting Game");
+                    Application.Quit();
+                    break;
+            }
+
         }
     }
 
