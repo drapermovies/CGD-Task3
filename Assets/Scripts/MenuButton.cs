@@ -81,6 +81,10 @@ public class MenuButton : MonoBehaviour
                 case 0:
                     //FOR AUDIO FRIENDS, this code occurs when player has pressed/clicked 'NEW GAME' (haven't made it go to new scene yet lol)
                     Debug.Log("Play the Game");
+                    canvas.inEndMenu = true;
+                    canvas.inMainMenu = false;
+                    switchMenuDisplay();
+                    SceneManager.LoadScene("SampleScene");
                     break;
                 case 1:
                     //FOR AUDIO FRIENDS, this code occurs when player has pressed/clicked 'OPTIONS' (less intense sfx, can be reused for the rest of the cases tbh)
@@ -119,6 +123,7 @@ public class MenuButton : MonoBehaviour
             {
                 case 0:
                     Debug.Log("Play the Game");
+                    SceneManager.LoadScene("SampleScene");
                     break;
                 case 1:
                     Debug.Log("Go back to Main Menu");
