@@ -11,6 +11,7 @@ public class MenuButton : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] AnimatorFunctions animatorFunctions;
     [SerializeField] int thisIndex;
+    public bool notClickable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,7 @@ public class MenuButton : MonoBehaviour
         if (menuController.index == thisIndex)
         {
             animator.SetBool("selected", true);
-            if (Input.GetAxis("Submit") == 1)
+            if (Input.GetAxis("Submit") == 1 && !notClickable)
             {
                 animator.SetBool("pressed", true);
             }
@@ -53,6 +54,12 @@ public class MenuButton : MonoBehaviour
             {
                 menuTransitionOut();
             }
+            if (Input.GetAxis("Submit") == 1 && notClickable)
+            {
+                menuController.lockedIndex = menuController.index;
+                menuProgression();
+            }
+
         }
         else
         {
@@ -61,12 +68,13 @@ public class MenuButton : MonoBehaviour
     }
 
     public void menuTransitionOut()
-    {
+    { 
         animatorFunctions.disableOnce = true;
         canvas.currentlyTransitioning = true;
         menuController.hasTransitionedOut = true;
         animator.SetBool("pressed", true);
         menuController.lockedIndex = menuController.index;
+
     }
 
     public void menuProgression()
@@ -105,9 +113,11 @@ public class MenuButton : MonoBehaviour
             {
                 case 0:
                     Debug.Log("Options 1");
+
                     break;
                 case 1:
                     Debug.Log("Options 2");
+
                     break;
                 case 2:
                     Debug.Log("Go back to Main Menu");
@@ -166,13 +176,18 @@ public class MenuButton : MonoBehaviour
 
     public void mouseSelect()
     {
-        if (canvas.currentlyTransitioning == false)
+        if (canvas.currentlyTransitioning == false && !notClickable)
         {
             animator.SetBool("pressed", true);
             if (animator.GetBool("pressed"))
             {
                 menuTransitionOut();
             }
+        }
+        if (canvas.currentlyTransitioning == false && notClickable)
+        {
+            menuController.lockedIndex = menuController.index;
+            menuProgression();
         }
 
     }
