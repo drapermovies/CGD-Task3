@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742078e42f6300744b758ffecd5336c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 776377991}
+  target: {fileID: 1198291049}
   player: {fileID: 1050590090}
   turnSpeed: 5
   rotateToPlayer: 0
@@ -557,6 +557,14 @@ PrefabInstance:
     - target: {fileID: 2060983870, guid: 338a17ed92fa3f0448edff0fcade0a3c, type: 3}
       propertyPath: avoidancePriority
       value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 920420216, guid: 338a17ed92fa3f0448edff0fcade0a3c, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2060983871, guid: 338a17ed92fa3f0448edff0fcade0a3c, type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 338a17ed92fa3f0448edff0fcade0a3c, type: 3}
