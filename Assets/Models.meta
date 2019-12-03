@@ -1,9 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: c2b1d89d9589cd94387bcf537b68e277
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+=======
 guid: d5a32794b5c18be4eb84c459ae4e7b5e
 folderAsset: yes
 timeCreated: 1460332596
 licenseType: Store
 DefaultImporter:
+>>>>>>> AIDrew
   userData: 
   assetBundleName: 
   assetBundleVariant: 

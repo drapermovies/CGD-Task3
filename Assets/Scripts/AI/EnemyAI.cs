@@ -18,9 +18,6 @@ public class EnemyAI : MonoBehaviour
     public LayerMask whatIsGround;
     public Rigidbody rb;
 
-    [Header("Pathfinding")]
-    public List<Vector3> waypoints = new List<Vector3>();
-
     public bool has_bumped { get; set; }
 
     [Header("Bump")]
@@ -34,8 +31,10 @@ public class EnemyAI : MonoBehaviour
 
     private NavMeshAgent[] nav_agents;
 
-    private float vSpeed;
+    private float vSpeed = 0.0f;
     private float new_bump = 0.0f;
+
+    private Transform tform;
     #endregion
 
     void Awake()
@@ -43,6 +42,7 @@ public class EnemyAI : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         anim.SetBool("isIdle", true);
+        tform = GetComponent<Transform>();
 
         //Loop through children to get the correct children we need
         foreach(Transform child in GetComponentsInChildren<Transform>())
@@ -56,6 +56,8 @@ public class EnemyAI : MonoBehaviour
                 bump_particles = child.GetComponent<ParticleSystem>();
             }
         }
+
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
     }
     void Start()
     {
@@ -63,7 +65,8 @@ public class EnemyAI : MonoBehaviour
     }
     void FixedUpdate()
     {
-        grounded = Physics.CheckSphere(groundCheck.position, groundRadius, whatIsGround);
+        grounded = Physics.CheckSphere(groundCheck.position, groundRadius, 
+                                       whatIsGround);
         vSpeed = rb.velocity.y;
         anim.SetFloat("vSpeed", vSpeed);
     }
@@ -95,31 +98,22 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-   /* void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
-
-        foreach(Vector3 point in waypoints)
-        {
-            Gizmos.DrawCube(point, new Vector3(0.5f, 0.5f, 0.5f));
-        }
-    } 
-    */
-
     public void UpdateTargets(Vector3 target_pos)
     {
         foreach (NavMeshAgent agent in nav_agents)
         {
             agent.destination = target_pos;
+            Debug.Log("Destination: " + agent.destination);
         }
     }
 
+    //Makes player idle when they reach their destination
     private void CheckIdleState()
     {
         foreach(NavMeshAgent agent in nav_agents)
         {
-            if(transform.position == agent.destination)
+            transform.position.Normalize();
+            if(Vector3.Distance(transform.position, agent.destination) <= bump_range)
             {
                 Idle();
             }
@@ -134,6 +128,7 @@ public class EnemyAI : MonoBehaviour
         GetComponent<NavMeshAgent>().speed = 1.3f; //Move slower
     }
 
+    //Play Idle Animation and find new waypoint
     public void Idle()
     {
         anim.SetBool("isIdle", true);
@@ -218,7 +213,10 @@ public class EnemyAI : MonoBehaviour
     {
         float max_distance = 9999.9f;
         Vector3 nearest_point = Vector3.zero;
-        foreach(Vector3 point in waypoints)
+
+        List<Vector3> waypoints = FindObjectOfType<EnemyManager>().waypoints;
+
+        foreach (Vector3 point in waypoints)
         {
             float distance = Vector3.Distance(transform.position, point);
 
@@ -230,12 +228,13 @@ public class EnemyAI : MonoBehaviour
         }
 
         //We're already here, so find somewhere else to go
-        if(Vector3.Distance(nearest_point, transform.position) < bump_range)
+        if(Vector3.Distance(nearest_point, transform.position) <= bump_range)
         {
             int random = Random.Range(0, waypoints.Count);
             nearest_point = waypoints[random]; 
         }
 
+        Debug.Log("Moving to " + nearest_point);
         UpdateTargets(nearest_point);
     }
 
@@ -256,6 +255,8 @@ public class EnemyAI : MonoBehaviour
 
                 Run();
                 UpdateTargets(newPos);
+
+                Debug.Log("<color=red>AAHHH!!! SCARY PLAYER!!!</color>");
 
                 return;
             }
