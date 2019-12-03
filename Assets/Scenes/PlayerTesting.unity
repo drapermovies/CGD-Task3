@@ -430,9 +430,9 @@ RectTransform:
   m_Father: {fileID: 1211139976}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.77}
-  m_AnchorMax: {x: 0, y: 0.77}
-  m_AnchoredPosition: {x: 500, y: -78}
+  m_AnchorMin: {x: 0, y: 0.75}
+  m_AnchorMax: {x: 0, y: 0.75}
+  m_AnchoredPosition: {x: 500, y: -69}
   m_SizeDelta: {x: 300, y: 31}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &487388265
@@ -1130,7 +1130,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866751015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
