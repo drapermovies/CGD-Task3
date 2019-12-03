@@ -18,9 +18,6 @@ public class EnemyAI : MonoBehaviour
     public LayerMask whatIsGround;
     public Rigidbody rb;
 
-    [Header("Pathfinding")]
-    public List<Vector3> waypoints = new List<Vector3>();
-
     public bool has_bumped { get; set; }
 
     [Header("Bump")]
@@ -105,11 +102,6 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
-
-        foreach(Vector3 point in waypoints)
-        {
-            Gizmos.DrawCube(point, new Vector3(0.5f, 0.5f, 0.5f));
-        }
     }
 
     public void UpdateTargets(Vector3 target_pos)
@@ -121,11 +113,13 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    //Makes player idle when they reach their destination
     private void CheckIdleState()
     {
         foreach(NavMeshAgent agent in nav_agents)
         {
-            if(transform.position == agent.destination)
+            transform.position.Normalize();
+            if(Vector3.Distance(transform.position, agent.destination) <= bump_range)
             {
                 Idle();
             }
@@ -225,7 +219,10 @@ public class EnemyAI : MonoBehaviour
     {
         float max_distance = 9999.9f;
         Vector3 nearest_point = Vector3.zero;
-        foreach(Vector3 point in waypoints)
+
+        List<Vector3> waypoints = FindObjectOfType<EnemyManager>().waypoints;
+
+        foreach (Vector3 point in waypoints)
         {
             float distance = Vector3.Distance(transform.position, point);
 
@@ -237,7 +234,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         //We're already here, so find somewhere else to go
-        if(Vector3.Distance(nearest_point, transform.position) < bump_range)
+        if(Vector3.Distance(nearest_point, transform.position) <= bump_range)
         {
             int random = Random.Range(0, waypoints.Count);
             nearest_point = waypoints[random]; 
