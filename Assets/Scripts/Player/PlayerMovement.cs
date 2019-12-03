@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     {
         public float forward;
         public float horizontal;
-        public float vertical;
+        //public float vertical;
     }
 
     private velocity vel;
@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
                 desiredMoveDirection = ((camForward * vel.forward) + (camRight * vel.horizontal)) * Time.deltaTime * speed;
             }
             //rotate
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection), turnSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desiredMoveDirection, transform.up), turnSpeed);
             transform.rotation = new Quaternion(0, transform.rotation.y, 0,transform.rotation.w);
             //Move relative to camera's rotation
             //transform.position = transform.position + desiredMoveDirection * Time.deltaTime;
