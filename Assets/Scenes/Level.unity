@@ -558,6 +558,10 @@ PrefabInstance:
       propertyPath: avoidancePriority
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 2060983870, guid: 338a17ed92fa3f0448edff0fcade0a3c, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 920420216, guid: 338a17ed92fa3f0448edff0fcade0a3c, type: 3}
       propertyPath: m_RootOrder
       value: 5
