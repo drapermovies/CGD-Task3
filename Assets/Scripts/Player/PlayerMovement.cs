@@ -43,6 +43,15 @@ public class PlayerMovement : MonoBehaviour
         {
             newMove = true;
         }
+        else
+        {
+            if(vel.forward == 0 && vel.horizontal == 0)
+            {
+                Vector3 newVel = Vector3.zero;
+                newVel.y = rigidbody.velocity.y;
+                rigidbody.velocity = newVel;
+            }
+        }
 
         if (Input.GetKey("a"))
         {
@@ -124,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButton(0) && (Input.GetKey("left shift")) == false)
+        if (Input.GetMouseButton(1) && (Input.GetKey("left shift")) == false)
         {
             if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping")))
             {
@@ -145,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("Capturing", false);
             crosshair.gameObject.SetActive(false);
         }
-        if(anim.GetBool("Capturing") && Input.GetMouseButton(0))
+        if(anim.GetBool("Capturing") && Input.GetMouseButtonDown(0))
         {
             FindObjectOfType<PlayerCapture>().Capture();
         }
