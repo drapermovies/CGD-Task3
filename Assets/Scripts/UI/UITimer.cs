@@ -42,6 +42,7 @@ public class UITimer : MonoBehaviour
                 if (timer <= 0.0f)
                 {
                     //failure state
+                    //GAME OVER
                 }
             }
 

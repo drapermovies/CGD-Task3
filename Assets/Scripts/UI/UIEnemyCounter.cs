@@ -34,5 +34,10 @@ public class UIEnemyCounter : MonoBehaviour
     {
         counter--;
         counterText.text = startText + counter + "/5";
+        if(counter == 0)
+        {
+            //win state
+            //YOU WIN
+        }
     }
 }
