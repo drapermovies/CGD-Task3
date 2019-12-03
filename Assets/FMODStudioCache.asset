@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8754087075563280835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\CGD-Task3\Goose Abuse\Build\Desktop\Master Bank.bank
+  lastModified: 637109907747012903
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 330752
+  Exists: 1
 --- !u!114 &-7389949395121744791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,13 +34,13 @@ MonoBehaviour:
   Path: event:/Enemies/Enemy  footsteps
   guid: 797344f2b89b7b46b2dc30f7c1b6f85f
   Banks:
-  - {fileID: 4526382633649932735}
+  - {fileID: -8754087075563280835}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5702807945064716356}
-  - {fileID: 8323339521221979653}
+  - {fileID: 2988979244325742879}
+  - {fileID: -244356902545469002}
   MinDistance: 0
   MaxDistance: 0
   Length: 7000
@@ -56,13 +75,13 @@ MonoBehaviour:
   Path: event:/Player/Loops
   guid: fb3d5ac807f3a947a8ccdf573fd6592e
   Banks:
-  - {fileID: 4526382633649932735}
+  - {fileID: -8754087075563280835}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4993205995455776757}
-  - {fileID: -3064909626528310962}
+  - {fileID: 8054140518605850155}
+  - {fileID: 5211523776077169696}
   MinDistance: 0
   MaxDistance: 0
   Length: 7600
@@ -113,12 +132,12 @@ MonoBehaviour:
   Path: event:/Player/jumps Concrete
   guid: 78c0e92ae7189249b6a5705eaaefbd59
   Banks:
-  - {fileID: 4526382633649932735}
+  - {fileID: -8754087075563280835}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -6621555651616658666}
+  - {fileID: 2184572731114064806}
   MinDistance: 0
   MaxDistance: 0
   Length: 1554
@@ -135,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Goose Abuse\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637109757194759883
+  lastModified: 637109907746982970
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -157,6 +176,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &-2173903308148222642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &-672199269615399725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,15 +207,31 @@ MonoBehaviour:
   Path: event:/Player/jumps Metal
   guid: 6c75758f82eeb24f9c48db6af9ccc92e
   Banks:
-  - {fileID: 4526382633649932735}
+  - {fileID: -8754087075563280835}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 849830757423243464}
+  - {fileID: -2173903308148222642}
   MinDistance: 0
   MaxDistance: 0
   Length: 1515
+--- !u!114 &-244356902545469002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,18 +246,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -3213012792474482002}
-  - {fileID: 4526382633649932735}
+  - {fileID: -8754087075563280835}
   EditorEvents:
   - {fileID: -672199269615399725}
   - {fileID: -4228153783664924872}
   - {fileID: -7389949395121744791}
   - {fileID: 2392770181312532220}
   - {fileID: -6410811330933917960}
-  MasterBankRef: {fileID: 4526382633649932735}
+  MasterBankRef: {fileID: -8754087075563280835}
   StringsBankRef: {fileID: -3213012792474482002}
-  stringsBankWriteTime: 637109757194759883
+  stringsBankWriteTime: 637109907746982970
   cacheVersion: 2
 --- !u!114 &849830757423243464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &2184572731114064806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,15 +304,31 @@ MonoBehaviour:
   Path: event:/Player/jumps Wood
   guid: bcda68757282e840b9ed02269faf2c14
   Banks:
-  - {fileID: 4526382633649932735}
+  - {fileID: -8754087075563280835}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 8741573520274484747}
+  - {fileID: 8728409254711798027}
   MinDistance: 0
   MaxDistance: 0
   Length: 1574
+--- !u!114 &2988979244325742879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &4526382633649932735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +348,38 @@ MonoBehaviour:
   - Name: Desktop
     Value: 330752
   Exists: 1
+--- !u!114 &5211523776077169696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &8054140518605850155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &8323339521221979653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +393,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Speed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &8728409254711798027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
   Min: 0
   Max: 1
   Default: 0

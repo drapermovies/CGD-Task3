@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     new private Rigidbody rigidbody;
     new public Camera camera;
 
+    bool jumpApex = false;
+
     private Vector3 desiredMoveDirection;
     private float camTimer = 1.0f;
     public bool newMove = true;
@@ -42,10 +44,18 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("a"))
         {
             vel.horizontal -= accel * Time.deltaTime;
+            if (!PlayerAudioManager.GetisInAir())
+            {
+                PlayerAudioManager.Setiswalking(true);
+            }
         }
         if (Input.GetKey("d"))
         {
             vel.horizontal += accel * Time.deltaTime;
+            if (!PlayerAudioManager.GetisInAir())
+            {
+                PlayerAudioManager.Setiswalking(true);
+            }
         }
         vel.horizontal = Mathf.Clamp(vel.horizontal, -20.0f, 20.0f);
         //deceleration
@@ -68,14 +78,32 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+        // Stop input (for audio)
+        if(Input.GetKeyUp("a"))
+        {
+            PlayerAudioManager.Setiswalking(false);
+        }
+        if(Input.GetKeyUp("d"))
+        {
+            PlayerAudioManager.Setiswalking(false);
+        }
+
 
         if (Input.GetKey("w"))
         {
             vel.forward += accel * Time.deltaTime;
+            if (!PlayerAudioManager.GetisInAir())
+            {
+                PlayerAudioManager.Setiswalking(true);
+            }
         }
         if (Input.GetKey("s"))
         {
             vel.forward -= accel * Time.deltaTime;
+            if (!PlayerAudioManager.GetisInAir())
+            {
+                PlayerAudioManager.Setiswalking(true);
+            }
         }
         vel.forward = Mathf.Clamp(vel.forward, -20.0f, 20.0f);
         //deceleration
@@ -98,19 +126,52 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+        // Stop input (for audio)
+        if (Input.GetKeyUp("w"))
+        {
+            PlayerAudioManager.Setiswalking(false);
+        }
+        if (Input.GetKeyUp("s"))
+        {
+            PlayerAudioManager.Setiswalking(false);
+        }
+
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (rigidbody.velocity.y <= 0.2f && rigidbody.velocity.y >= -0.2f)
             {
                 if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 0.1f))
                 {
                     rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
+                    PlayerAudioManager.SetisJumping(true);
+                    PlayerAudioManager.Setiswalking(false);
+                    PlayerAudioManager.SetisInAir(true);
                 }
             }
+        }
+        else
+        {
+            PlayerAudioManager.SetisJumping(false);
+            if (rigidbody.velocity.y == 0)
+            {
+                if (jumpApex == false)
+                {
+                    if (PlayerAudioManager.GetisInAir() == true)
+                    {
+                        jumpApex = true;
+                    }
+                }
+                else
+                {
+                    PlayerAudioManager.SetisInAir(false);
+                    jumpApex = false;
+                }
+            }
+            
         }
 
         if (vel.forward != 0.0f || vel.horizontal != 0.0f)
