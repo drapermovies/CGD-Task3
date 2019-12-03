@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 
     public int index;
     public int lockedIndex = 10;
-    [SerializeField] bool keyDown;
+    public bool keyDown;
     [SerializeField] int maxIndex;
     public AudioSource audioSource;
 
