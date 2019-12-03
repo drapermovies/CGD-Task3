@@ -124,9 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        //Debug.Log(anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping"));
-
-        if (Input.GetMouseButton(1) && (Input.GetKey("left shift")) == false)
+        if (Input.GetMouseButton(0) && (Input.GetKey("left shift")) == false)
         {
             if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping")))
             {
