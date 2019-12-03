@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSpeed: 600
+  EnemyRunDistance: 10
   grounded: 0
   groundCheck: {fileID: 8610477794705410163}
   groundRadius: 0.2
@@ -249,6 +250,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Collision Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 9204435618845947675, guid: 080cb65a749d0db46878057bb4aa201e,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1767941704031800929, guid: 080cb65a749d0db46878057bb4aa201e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -302,11 +308,6 @@ PrefabInstance:
     - target: {fileID: 1767941704031800929, guid: 080cb65a749d0db46878057bb4aa201e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9204435618845947675, guid: 080cb65a749d0db46878057bb4aa201e,
-        type: 3}
-      propertyPath: looping
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
