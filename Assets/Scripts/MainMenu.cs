@@ -37,6 +37,7 @@ public class MainMenu : MonoBehaviour
             mainMenu.gameObject.SetActive(true);
             optionsMenu.gameObject.SetActive(false);
             endMenu.gameObject.SetActive(false);
+
         }
         else if (inOptionsMenu)
         {
