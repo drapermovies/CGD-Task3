@@ -98,12 +98,6 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
-    }
-
     public void UpdateTargets(Vector3 target_pos)
     {
         foreach (NavMeshAgent agent in nav_agents)
