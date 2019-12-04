@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{55314b6d-c2e1-42fb-aca6-62115b9e63ef}">
+        <property name="name">
+            <value>KeyDown</value>
+        </property>
+        <relationship name="folder">
+            <destination>{f321ddd5-cf4a-41c0-959f-81c181f4119c}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{8623b361-cce2-4f9f-a151-914281864368}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{8623b361-cce2-4f9f-a151-914281864368}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{b32d96e6-d5ef-4c7f-8f0f-6f5acc77efe9}">
+        <property name="assetPath">
+            <value>Vacuum Suck.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>96</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.90133333333333332</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{8bfa2f7f-d631-4fb4-8f02-eeedb13600c2}</destination>
+        </relationship>
+    </object>
+</objects>

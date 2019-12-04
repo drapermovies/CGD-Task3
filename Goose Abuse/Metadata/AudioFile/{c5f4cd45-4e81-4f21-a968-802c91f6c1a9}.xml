@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{c5f4cd45-4e81-4f21-a968-802c91f6c1a9}">
+        <property name="assetPath">
+            <value>Melodic_Win_1.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>96</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>4</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{8bfa2f7f-d631-4fb4-8f02-eeedb13600c2}</destination>
+        </relationship>
+    </object>
+</objects>

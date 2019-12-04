@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{1c61c89c-bb56-4adf-907e-9337f73d7d6b}">
+        <property name="name">
+            <value>Capture</value>
+        </property>
+        <relationship name="folder">
+            <destination>{f321ddd5-cf4a-41c0-959f-81c181f4119c}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{4908d955-df5a-4d81-8e8b-3c7c698741bf}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{4908d955-df5a-4d81-8e8b-3c7c698741bf}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="isExposedRecursively">
+            <value>false</value>
+        </property>
+    </object>
+</objects>
