@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
 {
     #region Header 
     [Header("Default Values")]
+    [SerializeField] private float walk_speed = 1.3f;
+    [SerializeField] private float run_speed = 2.85f;
     public float jumpSpeed = 600.0f;
     public float EnemyRunDistance = 4.0f;
 
@@ -124,7 +126,7 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("crippled", true);
         anim.SetBool("isIdle", false);
 
-        GetComponent<NavMeshAgent>().speed = 1.3f; //Move slower
+        GetComponent<NavMeshAgent>().speed = walk_speed; //Move slower
     }
 
     //Play Idle Animation and find new waypoint
@@ -149,7 +151,7 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("isIdle", false);
         anim.SetBool("crippled", false);
 
-        GetComponent<NavMeshAgent>().speed = 3.5f; //Move faster
+        GetComponent<NavMeshAgent>().speed = run_speed; //Move faster
     }
 
     //Plays a particle when we 'bump' into something

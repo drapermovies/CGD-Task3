@@ -21,6 +21,9 @@ public class UIEnemyCounter : MonoBehaviour
         counterText = gameObject.GetComponent<Text>();
         startText = counterText.text;
         rectTransform = GetComponent<RectTransform>();
+
+        maxCounter = FindObjectsOfType<EnemyAI>().Length;
+
         counterText.text = startText + counter + "/" + maxCounter;
     }
 
