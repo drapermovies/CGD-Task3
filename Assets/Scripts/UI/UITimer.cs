@@ -7,45 +7,43 @@ public class UITimer : MonoBehaviour
 {
     private Text timerText;
     public float timer;
-    private string startText;
 
-    private RectTransform rectTransform;
-    private Vector2 pos = new Vector3(0, 0.15f);
-    private Vector2 velocity = Vector2.zero;
-
-    private bool inPosition = false;
-    public GameObject image;
+    public bool countDown = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        timerText = gameObject.GetComponent<Text>();
-        startText = timerText.text;
-        timerText.text = startText + "03:00:00";
         timer *= 60;
+        timerText = gameObject.GetComponent<Text>();
+        var minutes = Mathf.Floor(timer / 60); //Divide the guiTime by sixty to get the minutes.
+        var seconds = timer % 60;//Use the euclidean division for the seconds.
+        var fraction = (timer * 100) % 100;
+
+        //update the label value
+        timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, fraction);
         timer--;
-        rectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rectTransform.anchoredPosition != pos)
+        if (countDown)
         {
-            rectTransform.anchoredPosition = Vector2.SmoothDamp(rectTransform.anchoredPosition, pos, ref velocity, 0.7f);
-        }
-        else
-        {
-            if(!inPosition)
-            {
-                inPosition = true;
-                Destroy(image);
-            }
             timer -= Time.deltaTime;
-
-            if(timer <= 0.0f)
+            if(timer <= 15.0f)
             {
-                //failure state
+                timerText.color = Color.red;
+                Vector3 newScale = transform.localScale;
+                newScale.x = Mathf.PingPong(Time.time, 0.5f) + 1;
+                newScale.y = newScale.x;
+                newScale.z = newScale.y;
+                transform.localScale = newScale;
+
+                if (timer <= 0.0f)
+                {
+                    //failure state
+                    //GAME OVER
+                }
             }
 
             var minutes = Mathf.Floor(timer / 60); //Divide the guiTime by sixty to get the minutes.
@@ -53,7 +51,7 @@ public class UITimer : MonoBehaviour
             var fraction = (timer * 100) % 100;
 
             //update the label value
-            timerText.text = startText + string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, fraction);
-        }
+            timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, fraction);
+        }        
     }
 }

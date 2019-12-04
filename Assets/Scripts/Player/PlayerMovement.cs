@@ -47,6 +47,15 @@ public class PlayerMovement : MonoBehaviour
         {
             newMove = true;
         }
+        else
+        {
+            if(vel.forward == 0 && vel.horizontal == 0)
+            {
+                Vector3 newVel = Vector3.zero;
+                newVel.y = rigidbody.velocity.y;
+                rigidbody.velocity = newVel;
+            }
+        }
 
         if (Input.GetKey("a"))
         {
@@ -128,8 +137,6 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        //Debug.Log(anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping"));
-
         if (Input.GetMouseButton(1) && (Input.GetKey("left shift")) == false)
         {
             if ((anim.GetCurrentAnimatorStateInfo(0).IsName("Jumping")))
@@ -161,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
             aimParticles.SetActive(false);
             captureParticles.SetActive(false);
         }
-        if(anim.GetBool("Capturing") && Input.GetMouseButton(0))
+        if(anim.GetBool("Capturing") && Input.GetMouseButtonDown(0))
         {
             FindObjectOfType<PlayerCapture>().Capture();
             aimParticles.SetActive(false);
