@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 23275796}
   - component: {fileID: 23275795}
   - component: {fileID: 23275794}
+  - component: {fileID: 23275797}
   m_Layer: 5
   m_Name: Victory
   m_TagString: Untagged
@@ -315,6 +316,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &23275797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23275792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73f2ce242a667c479df371f100468b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1754695796}
+  menuController: {fileID: 73270036}
+  animator: {fileID: 23275796}
+  animatorFunctions: {fileID: 23275795}
+  thisIndex: -10
+  notClickable: 1
+  MenuSelectSound: event:/UI/Menu Scroll
+  MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &28684361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,6 +2817,7 @@ GameObject:
   - component: {fileID: 602075516}
   - component: {fileID: 602075515}
   - component: {fileID: 602075514}
+  - component: {fileID: 602075517}
   m_Layer: 5
   m_Name: Game Title
   m_TagString: Untagged
@@ -2920,6 +2942,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &602075517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602075512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73f2ce242a667c479df371f100468b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1754695796}
+  menuController: {fileID: 571748127}
+  animator: {fileID: 602075516}
+  animatorFunctions: {fileID: 602075515}
+  thisIndex: -10
+  notClickable: 1
+  MenuSelectSound: event:/UI/Menu Scroll
+  MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &701394492
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,6 +5677,7 @@ GameObject:
   - component: {fileID: 1469761458}
   - component: {fileID: 1469761457}
   - component: {fileID: 1469761456}
+  - component: {fileID: 1469761459}
   m_Layer: 5
   m_Name: Defeat
   m_TagString: Untagged
@@ -5759,6 +5802,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1469761459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469761454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d73f2ce242a667c479df371f100468b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 1754695796}
+  menuController: {fileID: 73270036}
+  animator: {fileID: 1469761458}
+  animatorFunctions: {fileID: 1469761457}
+  thisIndex: -10
+  notClickable: 1
+  MenuSelectSound: event:/UI/Menu Scroll
+  MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &1593414036
 GameObject:
   m_ObjectHideFlags: 0
