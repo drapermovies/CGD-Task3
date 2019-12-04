@@ -7,9 +7,13 @@ public class PlayerAudioPlayer : MonoBehaviour
     [FMODUnity.EventRef]
     public string audioWalk;
     public float walkingSpeed;
+    public float runningSpeed;
+
+    FMOD.Studio.EventInstance PlayerWalk;
+    FMOD.Studio.ParameterInstance Surface;
 
     [FMODUnity.EventRef]
-    public string audioJump;
+    public string audioLand;
 
     public Rigidbody rb;
 
@@ -17,6 +21,12 @@ public class PlayerAudioPlayer : MonoBehaviour
     void Start()
     {
         InvokeRepeating("CallFootsteps", 0, walkingSpeed);
+        InvokeRepeating("CallRunsteps", 0, runningSpeed);
+
+        Surface.setValue(1);
+
+        PlayerWalk = FMODUnity.RuntimeManager.CreateInstance(audioWalk);
+        PlayerWalk.getParameter("Surface", out Surface);
     }
 
     // Update is called once per frame
@@ -28,9 +38,10 @@ public class PlayerAudioPlayer : MonoBehaviour
         //Debug.Log("Is Sucking: " + PlayerAudioManager.GetisSucking());
         //Debug.Log("Is Hit: " + PlayerAudioManager.GetisHit());
 
-        if(PlayerAudioManager.GetisJumping() == true)
+        if(PlayerAudioManager.GetisLanding() == true)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(audioJump);
+            FMODUnity.RuntimeManager.PlayOneShot(audioLand);
+            PlayerAudioManager.SetisLanding(false);
         }
 
     }
@@ -38,6 +49,13 @@ public class PlayerAudioPlayer : MonoBehaviour
     void CallFootsteps()
     {
         if (PlayerAudioManager.GetisWalking() == true)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(audioWalk);
+        }
+    }
+    void CallRunsteps()
+    {
+        if (PlayerAudioManager.GetisRunning() == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(audioWalk);
         }

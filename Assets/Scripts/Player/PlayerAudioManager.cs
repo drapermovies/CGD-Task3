@@ -5,8 +5,10 @@ using UnityEngine;
 public static class PlayerAudioManager
 {
     static bool isWalking;
+    static bool isRunning;
     static bool isJumping;
     static bool isInAir;
+    static bool isLanding;
     static bool isSucking;
     static bool isHit;
 
@@ -18,6 +20,15 @@ public static class PlayerAudioManager
     public static void Setiswalking(bool newWalking)
     {
         isWalking = newWalking;
+    }
+    public static bool GetisRunning()
+    {
+        return isRunning;
+    }
+
+    public static void SetisRunning(bool newRunning)
+    {
+        isRunning = newRunning;
     }
 
     public static bool GetisJumping()
@@ -38,6 +49,16 @@ public static class PlayerAudioManager
     public static void SetisInAir(bool newInAir)
     {
         isInAir = newInAir;
+    }
+
+    public static bool GetisLanding()
+    {
+        return isLanding;
+    }
+
+    public static void SetisLanding(bool newLanding)
+    {
+        isLanding = newLanding;
     }
 
     public static bool GetisSucking()

@@ -52,6 +52,7 @@ public class UITimer : MonoBehaviour
                         //GAME OVER
                         //Debug.Log("Game Over");
                         PlayerPrefs.SetFloat("GameState", 2);
+                        BGMManager.SetBGMend(true);
                         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                     }
                 }

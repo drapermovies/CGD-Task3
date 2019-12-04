@@ -31,6 +31,7 @@ public class moveText : MonoBehaviour
                 inPosition = true;
                 panel.gameObject.SetActive(false);
                 GetComponentInChildren<UITimer>().countDown = true;
+                BGMManager.SetBGMstart(true);
                 Destroy(image);
             }
         }
