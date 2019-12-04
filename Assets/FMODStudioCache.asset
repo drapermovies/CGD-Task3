@@ -87,12 +87,28 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -186486076191147551}
-  - {fileID: -8605553488447766216}
+  - {fileID: -799429346237919557}
+  - {fileID: -4479692538701043718}
   MinDistance: 0
   MaxDistance: 0
   Length: 7000
 --- !u!114 &-7381563660728484658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &-7082729603681677897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,8 +176,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -4123825400256668175}
-  - {fileID: 2225566628662454126}
+  - {fileID: 4542984667010901028}
+  - {fileID: 1331696839784612367}
   MinDistance: 0
   MaxDistance: 0
   Length: 7600
@@ -211,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Joel\Documents\GitHub\CGD-Task3\Goose Abuse\Build\Desktop\Master
     Bank.bank
-  lastModified: 637110122642305920
+  lastModified: 637110169910239116
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -233,6 +249,22 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &-4479692538701043718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &-4228153783664924872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,7 +285,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 7350612613123294287}
+  - {fileID: 1277193002282493839}
   MinDistance: 0
   MaxDistance: 0
   Length: 1554
@@ -302,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Goose Abuse\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637110122642355788
+  lastModified: 637110169910259055
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -372,6 +404,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &-799429346237919557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &-672199269615399725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +440,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -6575961213218056360}
+  - {fileID: 5050265304431811074}
   MinDistance: 0
   MaxDistance: 0
   Length: 1515
@@ -451,7 +499,7 @@ MonoBehaviour:
   - {fileID: -6410811330933917960}
   MasterBankRef: {fileID: -5008347926517076125}
   StringsBankRef: {fileID: -3213012792474482002}
-  stringsBankWriteTime: 637110122642355788
+  stringsBankWriteTime: 637110169910259055
   cacheVersion: 2
 --- !u!114 &710020184370235156
 MonoBehaviour:
@@ -482,6 +530,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &1277193002282493839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &1331696839784612367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
   Min: 0
   Max: 1
   Default: 0
@@ -537,7 +617,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -2179412420983371584}
+  - {fileID: -7082729603681677897}
   MinDistance: 0
   MaxDistance: 0
   Length: 1574
@@ -576,6 +656,38 @@ MonoBehaviour:
   - Name: Desktop
     Value: 330752
   Exists: 1
+--- !u!114 &4542984667010901028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &5050265304431811074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &5211523776077169696
 MonoBehaviour:
   m_ObjectHideFlags: 0
