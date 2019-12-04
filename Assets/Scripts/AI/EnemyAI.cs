@@ -127,6 +127,8 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("isIdle", false);
 
         GetComponent<NavMeshAgent>().speed = walk_speed; //Move slower
+
+        EnemyAudioManager.is_walking = true;
     }
 
     //Play Idle Animation and find new waypoint
@@ -143,6 +145,8 @@ public class EnemyAI : MonoBehaviour
         run_particles.Stop();
 
         FindNearestWaypoint(); //Go to nearest point if idle
+
+        EnemyAudioManager.is_walking = false;
     }
 
     public void Run()
@@ -152,6 +156,8 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("crippled", false);
 
         GetComponent<NavMeshAgent>().speed = run_speed; //Move faster
+
+        EnemyAudioManager.is_walking = true;
     }
 
     //Plays a particle when we 'bump' into something
