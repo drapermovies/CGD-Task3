@@ -13,6 +13,9 @@ public class MenuButton : MonoBehaviour
     [SerializeField] int thisIndex;
     public bool notClickable = false;
 
+    public bool hasSelected = false;
+    public bool hasPushed = false;
+
 
     [FMODUnity.EventRef]
     public string MenuSelectSound;
@@ -23,7 +26,7 @@ public class MenuButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        menuController.index = -1;
     }
 
     // Update is called once per frame
@@ -53,7 +56,11 @@ public class MenuButton : MonoBehaviour
         if (menuController.index == thisIndex)
         {
             animator.SetBool("selected", true);
-            FMODUnity.RuntimeManager.PlayOneShot(MenuChangeSound);
+            if (!hasSelected)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot(MenuSelectSound);
+                hasSelected = true;
+            }
             if ((Input.GetAxis("Submit") == 1 || Input.GetAxis("Fire1") == 1) && !notClickable)
             {
                 animator.SetBool("pressed", true);
@@ -72,6 +79,7 @@ public class MenuButton : MonoBehaviour
         else
         {
             animator.SetBool("selected", false);
+            hasSelected = false;
         }
     }
 
@@ -81,7 +89,11 @@ public class MenuButton : MonoBehaviour
         canvas.currentlyTransitioning = true;
         menuController.hasTransitionedOut = true;
         menuController.lockedIndex = menuController.index;
-        FMODUnity.RuntimeManager.PlayOneShot(MenuSelectSound);
+        if (!hasPushed)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(MenuSelectSound);
+            hasPushed = true;
+        }
     }
 
     public void menuProgression()
@@ -173,8 +185,8 @@ public class MenuButton : MonoBehaviour
                     Application.Quit();
                     break;
             }
-
         }
+        hasPushed = false;
     }
 
     private void switchMenuDisplay()

@@ -236,7 +236,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (rigidbody.velocity.y <= 0.2f && rigidbody.velocity.y >= -0.2f)
             {
-                if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 0.1f))
+                if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 1.0f))
                 {
                     rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
                     PlayerAudioManager.SetisJumping(true);

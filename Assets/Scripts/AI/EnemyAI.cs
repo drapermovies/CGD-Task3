@@ -104,8 +104,11 @@ public class EnemyAI : MonoBehaviour
     {
         foreach (NavMeshAgent agent in nav_agents)
         {
-            agent.destination = target_pos;
-            //Debug.Log("Destination: " + agent.destination);
+            if (agent.gameObject.activeInHierarchy)
+            {
+                agent.destination = target_pos;
+                //Debug.Log("Destination: " + agent.destination);
+            }
         }
     }
 
@@ -116,7 +119,10 @@ public class EnemyAI : MonoBehaviour
         {
             if(Vector3.Distance(transform.position, agent.destination) <= bump_range)
             {
-                Idle();
+                if (agent.gameObject.activeInHierarchy)
+                {
+                    Idle();
+                }
             }
         }
     }

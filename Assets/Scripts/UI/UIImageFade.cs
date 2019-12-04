@@ -21,7 +21,7 @@ public class UIImageFade : MonoBehaviour
         var imageColor = image.color;
         var textColor = text.color;
 
-        if (imageColor.a < 255)
+        if (imageColor.a < 1.0)
         {
             imageColor.a += Time.deltaTime * 0.5f;
             textColor.a = imageColor.a;

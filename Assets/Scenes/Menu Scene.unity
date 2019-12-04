@@ -334,6 +334,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 23275795}
   thisIndex: -10
   notClickable: 1
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &28684361
@@ -776,6 +778,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 154492003}
   thisIndex: 1
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!114 &154492006
@@ -1388,6 +1392,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 203084478}
   thisIndex: 1
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &241677376
@@ -1648,6 +1654,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 303906373}
   thisIndex: 0
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!114 &303906377
@@ -2104,6 +2112,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 415102479}
   thisIndex: 0
   notClickable: 1
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &448348704
@@ -2960,6 +2970,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 602075515}
   thisIndex: -10
   notClickable: 1
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &701394492
@@ -3054,6 +3066,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 701394494}
   thisIndex: 2
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!114 &701394497
@@ -3276,6 +3290,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 706752386}
   thisIndex: 1
   notClickable: 1
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &716260855
@@ -3584,6 +3600,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 744334318}
   thisIndex: 0
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &787341104
@@ -3643,9 +3661,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'INSERT GAME
-
-    HERE TITLE'
+  m_text: The Ghost Cleaner
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3902,6 +3918,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 818375915}
   thisIndex: 2
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &845855967
@@ -4434,6 +4452,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 898817303}
   thisIndex: 2
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &901631857
@@ -5820,6 +5840,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 1469761457}
   thisIndex: -10
   notClickable: 1
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &1593414036
@@ -5978,6 +6000,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 1593414039}
   thisIndex: 1
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &1693563799
@@ -6822,6 +6846,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 1990418429}
   thisIndex: 0
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &2036889535
@@ -6980,6 +7006,8 @@ MonoBehaviour:
   animatorFunctions: {fileID: 2036889538}
   thisIndex: 2
   notClickable: 0
+  hasSelected: 0
+  hasPushed: 0
   MenuSelectSound: event:/UI/Menu Scroll
   MenuChangeSound: event:/UI/Menu Select
 --- !u!1 &2073599699
