@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 7.5f;
 
     public GameObject crosshair;
+    public GameObject aimParticles;
+    public GameObject captureParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         camTimer = resetCamTimer;
         anim = gameObject.GetComponent<Animator>();
         anim.SetLayerWeight(1, 1.0f);
+        aimParticles.SetActive(false);
+        captureParticles.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -169,6 +173,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("Capturing", false);
                 crosshair.gameObject.SetActive(false);
+                aimParticles.SetActive(false);
+                captureParticles.SetActive(false);
             }
 
             else
@@ -176,6 +182,12 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("Capturing", true);
                 speed = 5.0f;
                 crosshair.gameObject.SetActive(true);
+                aimParticles.gameObject.SetActive(true);
+                
+                if (!Input.GetMouseButton(0))
+                {
+                    captureParticles.SetActive(false);
+                }
             }
         }
 
@@ -183,10 +195,14 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("Capturing", false);
             crosshair.gameObject.SetActive(false);
+            aimParticles.SetActive(false);
+            captureParticles.SetActive(false);
         }
         if(anim.GetBool("Capturing") && Input.GetMouseButtonDown(0))
         {
             FindObjectOfType<PlayerCapture>().Capture();
+            aimParticles.SetActive(false);
+            captureParticles.SetActive(true);
         }
         // Stop input (for audio)
         if (Input.GetKeyUp("w"))

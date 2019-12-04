@@ -6,11 +6,14 @@ public class PlayerCapture : MonoBehaviour
 {
     //The list of colliders currently inside the trigger
     private List<Collider> TriggerList = new List<Collider>();
+    public Camera capCamera;
     private List<GameObject> enemyList = new List<GameObject>();
+
 
     // Start is called before the first frame update
     void Start()
     {
+        capCamera.gameObject.SetActive(false);
     }
 
     public void Capture()
@@ -27,11 +30,12 @@ public class PlayerCapture : MonoBehaviour
                     FindObjectOfType<UIEnemyCounter>().updateCounter();
                     success = true;
                 }
+                
             }
         }
         if(success)
         {
-            //play successful capture anim + sound
+            capCamera.gameObject.SetActive(true);
         }
         else
         {
