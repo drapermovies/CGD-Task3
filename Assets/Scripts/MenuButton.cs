@@ -13,10 +13,17 @@ public class MenuButton : MonoBehaviour
     [SerializeField] int thisIndex;
     public bool notClickable = false;
 
+
+    [FMODUnity.EventRef]
+    public string MenuSelectSound;
+
+    [FMODUnity.EventRef]
+    public string MenuChangeSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -46,6 +53,7 @@ public class MenuButton : MonoBehaviour
         if (menuController.index == thisIndex)
         {
             animator.SetBool("selected", true);
+            FMODUnity.RuntimeManager.PlayOneShot(MenuChangeSound);
             if ((Input.GetAxis("Submit") == 1 || Input.GetAxis("Fire1") == 1) && !notClickable)
             {
                 animator.SetBool("pressed", true);
@@ -68,12 +76,12 @@ public class MenuButton : MonoBehaviour
     }
 
     public void menuTransitionOut()
-    { 
+    {
         animatorFunctions.disableOnce = true;
         canvas.currentlyTransitioning = true;
         menuController.hasTransitionedOut = true;
         menuController.lockedIndex = menuController.index;
-
+        FMODUnity.RuntimeManager.PlayOneShot(MenuSelectSound);
     }
 
     public void menuProgression()
