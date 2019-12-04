@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{8c96e82f-45b5-456b-b21c-e32c73348fdb}">
+        <property name="name">
+            <value>Menu Transition (Select)</value>
+        </property>
+        <relationship name="folder">
+            <destination>{f321ddd5-cf4a-41c0-959f-81c181f4119c}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{1c5fa94e-bef7-4add-b676-a0749de2e67b}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{1c5fa94e-bef7-4add-b676-a0749de2e67b}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

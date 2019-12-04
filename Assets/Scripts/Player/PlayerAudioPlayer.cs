@@ -7,6 +7,7 @@ public class PlayerAudioPlayer : MonoBehaviour
     [FMODUnity.EventRef]
     public string audioWalk;
     public float walkingSpeed;
+    public float runningSpeed;
 
     [FMODUnity.EventRef]
     public string audioJump;
@@ -17,6 +18,7 @@ public class PlayerAudioPlayer : MonoBehaviour
     void Start()
     {
         InvokeRepeating("CallFootsteps", 0, walkingSpeed);
+        InvokeRepeating("CallRunningsteps", 0, runningSpeed);
     }
 
     // Update is called once per frame
@@ -38,6 +40,14 @@ public class PlayerAudioPlayer : MonoBehaviour
     void CallFootsteps()
     {
         if (PlayerAudioManager.GetisWalking() == true)
+        {
+            FMODUnity.RuntimeManager.PlayOneShot(audioWalk);
+        }
+    }
+
+    void CallRunsteps()
+    {
+        if (PlayerAudioManager.GetisRunning() == true)
         {
             FMODUnity.RuntimeManager.PlayOneShot(audioWalk);
         }

@@ -151,14 +151,18 @@ public class PlayerMovement : MonoBehaviour
 
            if (Input.GetKey("left shift"))
            {
-             speed = 14.0f;
-             ChangeBool("Running", true);
+                speed = 14.0f;
+                PlayerAudioManager.Setiswalking(false);
+                PlayerAudioManager.SetisRunning(true);
+                ChangeBool("Running", true);
            }
            
            else
            {
-              speed = 7.5f;
-              ChangeBool("Walking", true);
+                speed = 7.5f;
+                PlayerAudioManager.SetisRunning(false);
+                PlayerAudioManager.Setiswalking(true);
+                ChangeBool("Walking", true);
            }
 
         }

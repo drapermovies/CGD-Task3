@@ -1656,9 +1656,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249be9784a3c1de42a98f1790ffad92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioWalk: event:/Player/jumps Wood
-  walkingSpeed: 1
-  audioJump: event:/Player/jumps Wood
+  audioWalk: event:/Player/Player Footsteps/jumps Metal
+  walkingSpeed: 0.5
+  runningSpeed: 0.25
+  audioJump: event:/Player/Player Footsteps/jumps Concrete
   rb: {fileID: 879439177}
 --- !u!1001 &964378124
 PrefabInstance:
@@ -1936,6 +1937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioWalk: event:/Player/jumps Wood
   walkingSpeed: 0.5
+  runningSpeed: 0
   audioJump: event:/Player/jumps Concrete
   rb: {fileID: 0}
 --- !u!64 &1175942295
