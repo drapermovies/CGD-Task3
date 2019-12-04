@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
 {
     #region Header 
     [Header("Default Values")]
+    [SerializeField] private float walk_speed = 1.3f;
+    [SerializeField] private float run_speed = 2.85f;
     public float jumpSpeed = 600.0f;
     public float EnemyRunDistance = 4.0f;
 
@@ -33,6 +35,8 @@ public class EnemyAI : MonoBehaviour
 
     private float vSpeed = 0.0f;
     private float new_bump = 0.0f;
+
+    private bool has_died = false;
 
     private Transform tform;
     #endregion
@@ -72,20 +76,18 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     {
-        CheckIdleState();
-
-        FindPlayer();
-
-        BumpCheck();
-
-        if (Input.GetKeyDown("space") && anim.GetBool("isIdle"))
+        if (!has_died)
         {
-            Jump();
-        }
+            CheckIdleState();
 
-        if (anim.GetBool("isRun") && !run_particles.isPlaying)
-        {
-            run_particles.Play();
+            FindPlayer();
+
+            BumpCheck();
+
+            if (anim.GetBool("isRun") && !run_particles.isPlaying)
+            {
+                run_particles.Play();
+            }
         }
     }
 
@@ -103,7 +105,7 @@ public class EnemyAI : MonoBehaviour
         foreach (NavMeshAgent agent in nav_agents)
         {
             agent.destination = target_pos;
-            Debug.Log("Destination: " + agent.destination);
+            //Debug.Log("Destination: " + agent.destination);
         }
     }
 
@@ -112,7 +114,6 @@ public class EnemyAI : MonoBehaviour
     {
         foreach(NavMeshAgent agent in nav_agents)
         {
-            transform.position.Normalize();
             if(Vector3.Distance(transform.position, agent.destination) <= bump_range)
             {
                 Idle();
@@ -122,10 +123,12 @@ public class EnemyAI : MonoBehaviour
 
     public void CrippledWalk()
     {
-        anim.SetBool("crippled", !(anim.GetBool("crippled")));
+        anim.SetBool("crippled", true);
         anim.SetBool("isIdle", false);
 
-        GetComponent<NavMeshAgent>().speed = 1.3f; //Move slower
+        GetComponent<NavMeshAgent>().speed = walk_speed; //Move slower
+
+        EnemyAudioManager.is_walking = true;
     }
 
     //Play Idle Animation and find new waypoint
@@ -136,20 +139,25 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("crippled", false);
         anim.SetBool("dancing", false);
 
-        Debug.Log("Idle");
+        //Debug.Log("Idle");
 
         run_particles.Clear();
         run_particles.Stop();
 
         FindNearestWaypoint(); //Go to nearest point if idle
+
+        EnemyAudioManager.is_walking = false;
     }
 
     public void Run()
     {
         anim.SetBool("isRun", !(anim.GetBool("isRun")));
         anim.SetBool("isIdle", false);
+        anim.SetBool("crippled", false);
 
-        GetComponent<NavMeshAgent>().speed = 3.5f; //Move faster
+        GetComponent<NavMeshAgent>().speed = run_speed; //Move faster
+
+        EnemyAudioManager.is_walking = true;
     }
 
     //Plays a particle when we 'bump' into something
@@ -178,12 +186,10 @@ public class EnemyAI : MonoBehaviour
                 nearest_obj = distance;
                 ChangeDistance(obj.transform.lossyScale);
 
-                Debug.Log(Vector3.Distance(this.transform.position, obj.transform.position));
-
                 if (Vector3.Distance(this.transform.position, obj.transform.position) <= new_bump)
                 {
                     Bump();
-                    Debug.Break();
+                    //Debug.Break();
                 }
                 else
                 {
@@ -239,7 +245,7 @@ public class EnemyAI : MonoBehaviour
             nearest_point = waypoints[random]; 
         }
 
-        Debug.Log("Moving to " + nearest_point);
+       // Debug.Log("Moving to " + nearest_point);
         UpdateTargets(nearest_point);
     }
 
@@ -261,7 +267,7 @@ public class EnemyAI : MonoBehaviour
                 Run();
                 UpdateTargets(newPos);
 
-                Debug.Log("<color=red>AAHHH!!! SCARY PLAYER!!!</color>");
+               // Debug.Log("<color=red>AAHHH!!! SCARY PLAYER!!!</color>");
 
                 return;
             }

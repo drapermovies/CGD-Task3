@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class UIEnemyCounter : MonoBehaviour
 {
     private Text counterText;
-    private int counter;
+    private int counter = 0;
     private string startText;
     public int maxCounter;
 
@@ -18,11 +18,13 @@ public class UIEnemyCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        counter = maxCounter;
         counterText = gameObject.GetComponent<Text>();
         startText = counterText.text;
         rectTransform = GetComponent<RectTransform>();
-        counterText.text = startText + "0/" + maxCounter;
+
+        maxCounter = FindObjectsOfType<EnemyAI>().Length;
+
+        counterText.text = startText + counter + "/" + maxCounter;
     }
 
     private void Update()
@@ -35,13 +37,13 @@ public class UIEnemyCounter : MonoBehaviour
 
     public void updateCounter()
     {
-        counter--;
+        counter++;
         counterText.text = startText + counter + "/" + maxCounter;
-        if(counter == 0)
+        if(counter == maxCounter)
         {
             //win state
             //YOU WIN
-            Debug.Log("Victory");
+            //Debug.Log("Victory");
             PlayerPrefs.SetFloat("GameState", 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }

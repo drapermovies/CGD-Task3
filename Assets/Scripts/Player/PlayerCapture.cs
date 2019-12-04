@@ -6,24 +6,41 @@ public class PlayerCapture : MonoBehaviour
 {
     //The list of colliders currently inside the trigger
     private List<Collider> TriggerList = new List<Collider>();
+    public Camera capCamera;
+    private List<GameObject> enemyList = new List<GameObject>();
+
 
     // Start is called before the first frame update
     void Start()
     {
+        capCamera.gameObject.SetActive(false);
     }
 
     public void Capture()
     {
+        bool success = false;
         foreach(Collider col in TriggerList)
         {
             if(col.gameObject.tag == "Enemy")
             {
-                Destroy(col.gameObject);
-                FindObjectOfType<UIEnemyCounter>().updateCounter();
-                //play capture animation
+                if(!enemyList.Contains(col.gameObject))
+                {
+                    enemyList.Add(col.gameObject);
+                    col.gameObject.SetActive(false);
+                    FindObjectOfType<UIEnemyCounter>().updateCounter();
+                    success = true;
+                }
+                
             }
         }
-        //if no enemy play failed capture animation
+        if(success)
+        {
+            capCamera.gameObject.SetActive(true);
+        }
+        else
+        {
+            //play failed capture animation + sound
+        }
     }
 
     //called when something enters the trigger

@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     new public Camera camera;
     private Animator anim;
 
+    bool jumpApex = false;
+
     private Vector3 desiredMoveDirection;
     private float camTimer = 1.0f;
     public bool newMove = true;
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 7.5f;
 
     public GameObject crosshair;
+    public GameObject aimParticles;
+    public GameObject captureParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
         camTimer = resetCamTimer;
         anim = gameObject.GetComponent<Animator>();
         anim.SetLayerWeight(1, 1.0f);
+        aimParticles.SetActive(false);
+        captureParticles.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -56,10 +64,18 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("a"))
         {
             vel.horizontal -= accel * Time.deltaTime;
+            if (!PlayerAudioManager.GetisInAir())
+            {
+                PlayerAudioManager.Setiswalking(true);
+            }
         }
         if (Input.GetKey("d"))
         {
             vel.horizontal += accel * Time.deltaTime;
+            if (!PlayerAudioManager.GetisInAir())
+            {
+                PlayerAudioManager.Setiswalking(true);
+            }
         }
         vel.horizontal = Mathf.Clamp(vel.horizontal, -20.0f, 20.0f);
         //deceleration
@@ -84,14 +100,32 @@ public class PlayerMovement : MonoBehaviour
 
             ChangeBool("Idle", true);
         }
+        // Stop input (for audio)
+        if(Input.GetKeyUp("a"))
+        {
+            PlayerAudioManager.Setiswalking(false);
+        }
+        if(Input.GetKeyUp("d"))
+        {
+            PlayerAudioManager.Setiswalking(false);
+        }
+
 
         if (Input.GetKey("w"))
         {
             vel.forward += accel * Time.deltaTime;
+            if (!PlayerAudioManager.GetisInAir())
+            {
+                PlayerAudioManager.Setiswalking(true);
+            }
         }
         if (Input.GetKey("s"))
         {
             vel.forward -= accel * Time.deltaTime;
+            if (!PlayerAudioManager.GetisInAir())
+            {
+                PlayerAudioManager.Setiswalking(true);
+            }
         }
         vel.forward = Mathf.Clamp(vel.forward, -20.0f, 20.0f);
         //deceleration
@@ -139,6 +173,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 anim.SetBool("Capturing", false);
                 crosshair.gameObject.SetActive(false);
+                aimParticles.SetActive(false);
+                captureParticles.SetActive(false);
             }
 
             else
@@ -146,6 +182,12 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetBool("Capturing", true);
                 speed = 5.0f;
                 crosshair.gameObject.SetActive(true);
+                aimParticles.gameObject.SetActive(true);
+                
+                if (!Input.GetMouseButton(0))
+                {
+                    captureParticles.SetActive(false);
+                }
             }
         }
 
@@ -153,25 +195,62 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("Capturing", false);
             crosshair.gameObject.SetActive(false);
+            aimParticles.SetActive(false);
+            captureParticles.SetActive(false);
         }
         if(anim.GetBool("Capturing") && Input.GetMouseButtonDown(0))
         {
             FindObjectOfType<PlayerCapture>().Capture();
+            aimParticles.SetActive(false);
+            captureParticles.SetActive(true);
         }
+        // Stop input (for audio)
+        if (Input.GetKeyUp("w"))
+        {
+            PlayerAudioManager.Setiswalking(false);
+        }
+        if (Input.GetKeyUp("s"))
+        {
+            PlayerAudioManager.Setiswalking(false);
+        }
+
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (rigidbody.velocity.y <= 0.2f && rigidbody.velocity.y >= -0.2f)
             {
                 if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 0.1f))
                 {
                     rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
+                    PlayerAudioManager.SetisJumping(true);
+                    PlayerAudioManager.Setiswalking(false);
+                    PlayerAudioManager.SetisInAir(true);
                     anim.SetTrigger("JumpingTrigger");
                 }
             }
+        }
+        else
+        {
+            PlayerAudioManager.SetisJumping(false);
+            if (rigidbody.velocity.y == 0)
+            {
+                if (jumpApex == false)
+                {
+                    if (PlayerAudioManager.GetisInAir() == true)
+                    {
+                        jumpApex = true;
+                    }
+                }
+                else
+                {
+                    PlayerAudioManager.SetisInAir(false);
+                    jumpApex = false;
+                }
+            }
+            
         }
 
         if (anim.GetBool("Capturing"))

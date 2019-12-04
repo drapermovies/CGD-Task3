@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{293d9d7d-0975-4a46-895b-27f813fe585c}">
+        <property name="assetPath">
+            <value>Metal Foosteps 15.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.3230385487528344</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{8bfa2f7f-d631-4fb4-8f02-eeedb13600c2}</destination>
+        </relationship>
+    </object>
+</objects>
