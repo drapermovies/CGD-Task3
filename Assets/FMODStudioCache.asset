@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\CGD-Task3\Goose Abuse\Build\Desktop\Master Bank.bank
-  lastModified: 637109844300000000
+  lastModified: 637110282936015958
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -82,6 +82,22 @@ MonoBehaviour:
   Name: Speed
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &-7426518763884538806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 180
   Default: 0
 --- !u!114 &-7389949395121744791
 MonoBehaviour:
@@ -144,7 +160,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6592990180351982145}
+  - {fileID: 6719591619361474994}
   MinDistance: 0
   MaxDistance: 0
   Length: 369
@@ -273,7 +289,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 9052344540270611239}
+  - {fileID: -2099796962297809019}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -313,7 +329,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -2715635568334622254}
+  - {fileID: -1319523996356815880}
   MinDistance: 0
   MaxDistance: 0
   Length: 1554
@@ -386,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Goose Abuse\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637109844320000000
+  lastModified: 637110282935876335
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -428,7 +444,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -6030628982382643276}
+  - {fileID: 9108555610511288671}
   MinDistance: 0
   MaxDistance: 0
   Length: 1574
@@ -480,6 +496,38 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &-2099796962297809019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: PlayerDistance
+  Min: 1.25
+  Max: 10
+  Default: 1.25
+--- !u!114 &-1319523996356815880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &-1294634599244162986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +541,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Idle
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &-906559801860537406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
   Min: 0
   Max: 1
   Default: 0
@@ -516,8 +580,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 7729323473680394924}
-  - {fileID: 7049831557554630179}
+  - {fileID: -906559801860537406}
+  - {fileID: -708217689433983226}
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
@@ -541,11 +605,27 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -8372605078249990156}
-  - {fileID: -7967108485938889642}
+  - {fileID: 7280901904278948853}
+  - {fileID: 5638696122942833482}
   MinDistance: 0
   MaxDistance: 0
   Length: 7600
+--- !u!114 &-708217689433983226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &-672199269615399725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +719,7 @@ MonoBehaviour:
   - {fileID: -881115993545137736}
   MasterBankRef: {fileID: -8754087075563280835}
   StringsBankRef: {fileID: -3213012792474482002}
-  stringsBankWriteTime: 637109844320000000
+  stringsBankWriteTime: 637110282935876335
   cacheVersion: 2
 --- !u!114 &710020184370235156
 MonoBehaviour:
@@ -709,7 +789,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 1017839042524179558}
+  - {fileID: 5674729301953579791}
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
@@ -749,7 +829,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3535272352687552433}
+  - {fileID: -7426518763884538806}
   MinDistance: 0
   MaxDistance: 0
   Length: 61685
@@ -829,7 +909,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1294634599244162986}
+  - {fileID: 5878247896710638502}
   MinDistance: 0
   MaxDistance: 20
   Length: 3000
@@ -872,7 +952,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 8971252062603350061}
+  - {fileID: 8327821977222966749}
   MinDistance: 0
   MaxDistance: 0
   Length: 1515
@@ -892,7 +972,103 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &5638696122942833482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &5674729301953579791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Capture
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &5878247896710638502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Idle
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &6713812188795646014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Transition (Select)
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &6719591619361474994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: KeyDown
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &7049831557554630179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &7280901904278948853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -928,7 +1104,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1984562225573271955}
+  - {fileID: 6713812188795646014}
   MinDistance: 0
   MaxDistance: 0
   Length: 582
@@ -977,6 +1153,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Speed
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &8327821977222966749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
   Min: 0
   Max: 1
   Default: 0
@@ -1044,3 +1236,19 @@ MonoBehaviour:
   Min: 1.25
   Max: 10
   Default: 1.25
+--- !u!114 &9108555610511288671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
