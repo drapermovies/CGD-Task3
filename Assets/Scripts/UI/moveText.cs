@@ -29,6 +29,7 @@ public class moveText : MonoBehaviour
             {
                 inPosition = true;
                 GetComponentInChildren<UITimer>().countDown = true;
+                BGMManager.SetBGMstart(true);
                 Destroy(image);
             }
         }
