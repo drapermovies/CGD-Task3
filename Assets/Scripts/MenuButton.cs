@@ -13,10 +13,17 @@ public class MenuButton : MonoBehaviour
     [SerializeField] int thisIndex;
     public bool notClickable = false;
 
+
+    [FMODUnity.EventRef]
+    public string MenuSelectSound;
+
+    [FMODUnity.EventRef]
+    public string MenuChangeSound;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -46,7 +53,8 @@ public class MenuButton : MonoBehaviour
         if (menuController.index == thisIndex)
         {
             animator.SetBool("selected", true);
-            if (Input.GetAxis("Submit") == 1 && !notClickable)
+            FMODUnity.RuntimeManager.PlayOneShot(MenuChangeSound);
+            if ((Input.GetAxis("Submit") == 1 || Input.GetAxis("Fire1") == 1) && !notClickable)
             {
                 animator.SetBool("pressed", true);
             }
@@ -54,7 +62,7 @@ public class MenuButton : MonoBehaviour
             {
                 menuTransitionOut();
             }
-            if (Input.GetAxis("Submit") == 1 && notClickable)
+            if ((Input.GetAxis("Submit") == 1 || Input.GetAxis("Fire1") == 1) && notClickable)
             {
                 menuController.lockedIndex = menuController.index;
                 menuProgression();
@@ -68,13 +76,12 @@ public class MenuButton : MonoBehaviour
     }
 
     public void menuTransitionOut()
-    { 
+    {
         animatorFunctions.disableOnce = true;
         canvas.currentlyTransitioning = true;
         menuController.hasTransitionedOut = true;
-        animator.SetBool("pressed", true);
         menuController.lockedIndex = menuController.index;
-
+        FMODUnity.RuntimeManager.PlayOneShot(MenuSelectSound);
     }
 
     public void menuProgression()
@@ -97,8 +104,8 @@ public class MenuButton : MonoBehaviour
                 case 1:
                     //FOR AUDIO FRIENDS, this code occurs when player has pressed/clicked 'OPTIONS' (less intense sfx, can be reused for the rest of the cases tbh)
                     Debug.Log("Options Menu");
-                    canvas.inOptionsMenu = true;
                     canvas.inMainMenu = false;
+                    canvas.inOptionsMenu = true;
                     switchMenuDisplay();
                     break;
                 case 2:
@@ -195,21 +202,21 @@ public class MenuButton : MonoBehaviour
 
     }
 
-    public void mouseSelect()
-    {
-        if (canvas.currentlyTransitioning == false && !notClickable)
-        {
-            animator.SetBool("pressed", true);
-            if (animator.GetBool("pressed"))
-            {
-                menuTransitionOut();
-            }
-        }
-        if (canvas.currentlyTransitioning == false && notClickable)
-        {
-            menuController.lockedIndex = menuController.index;
-            menuProgression();
-        }
+    //public void mouseSelect()
+    //{
+    //    if (canvas.currentlyTransitioning == false && !notClickable)
+    //    {
+    //        animator.SetBool("pressed", true);
+    //        if (animator.GetBool("pressed"))
+    //        {
+    //            menuTransitionOut();
+    //        }
+    //    }
+    //    else if (canvas.currentlyTransitioning == false && notClickable == true)
+    //    {
+    //        menuController.lockedIndex = menuController.index;
+    //        menuProgression();
+    //    }
 
-    }
+    //}
 }
