@@ -3241,9 +3241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249be9784a3c1de42a98f1790ffad92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioWalk: event:/Player/jumps Wood
-  walkingSpeed: 1
-  audioJump: event:/Player/jumps Wood
+  audioWalk: event:/Player/Player Footsteps/jumps Concrete
+  walkingSpeed: 0.5
+  runningSpeed: 0.33
+  audioLand: event:/Player/Player Footsteps/jumps Wood
   rb: {fileID: 1982035793}
 --- !u!54 &1982035793 stripped
 Rigidbody:
