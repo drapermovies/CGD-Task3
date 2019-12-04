@@ -6,10 +6,13 @@ public class PlayerCapture : MonoBehaviour
 {
     //The list of colliders currently inside the trigger
     private List<Collider> TriggerList = new List<Collider>();
+    public Camera capCamera;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        capCamera.gameObject.SetActive(false);
     }
 
     public void Capture()
@@ -20,7 +23,7 @@ public class PlayerCapture : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 FindObjectOfType<UIEnemyCounter>().updateCounter();
-                //play capture animation
+                capCamera.gameObject.SetActive(true);
             }
         }
         //if no enemy play failed capture animation
