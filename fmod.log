@@ -8,7 +8,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001ECC96C28E8 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002480DED9198 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -26,14 +26,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000851D4FF2DC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000007D46D2F3AC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFEBC64D9C0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFEBC64D990
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFEBC64DA90
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFEBC64DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001ECC2BD15A8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC1D3ED9C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC1D3ED990
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC1D3EDA90
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC1D3EDB50
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000248386D05A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jumping Wood 03', format=2, channels=2, frequency=48000, lengthbytes=5856, lengthpcm=75578, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.692650.
@@ -42,14 +42,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000851D4FF2DC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000007D46D2F3AC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFEBC64D9C0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFEBC64D990
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFEBC64DA90
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFEBC64DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001ECC2BD15A8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC1D3ED9C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC1D3ED990
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC1D3EDA90
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC1D3EDB50
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000248386D05A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jumping Wood 04', format=2, channels=2, frequency=48000, lengthbytes=4960, lengthpcm=69872, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.836441.
@@ -58,14 +58,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000851D4FF2DC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000007D46D2F3AC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFEBC64D9C0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFEBC64D990
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFEBC64DA90
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFEBC64DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001ECC2BD15A8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC1D3ED9C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC1D3ED990
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC1D3EDA90
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC1D3EDB50
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000248386D05A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jumping Wood 02', format=2, channels=2, frequency=48000, lengthbytes=4416, lengthpcm=67970, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
@@ -74,25 +74,25 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000851D4FF2DC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000007D46D2F3AC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFEBC64D9C0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFEBC64D990
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFEBC64DA90
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFEBC64DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001ECC2BD15A8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC1D3ED9C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC1D3ED990
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC1D3EDA90
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC1D3EDB50
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000248386D05A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jumping Wood 01', format=2, channels=2, frequency=48000, lengthbytes=4928, lengthpcm=70823, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.858172.
-[LOG] SoundI::release                          :  (000001ECACF13FC8)
-[LOG] SoundI::release                          :     Jumping Wood 01 (000001ECCEB2BF78)
-[LOG] SoundI::release                          :  (000001ECC9861FC8)
-[LOG] SoundI::release                          :     Jumping Wood 02 (000001ECCEB2BC38)
-[LOG] SoundI::release                          :  (000001ECC9861A08)
-[LOG] SoundI::release                          :     Jumping Wood 03 (000001ECCEB2B8F8)
-[LOG] SoundI::release                          :  (000001ECC9861B78)
-[LOG] SoundI::release                          :     Jumping Wood 04 (000001ECCEB2D978)
+[LOG] SoundI::release                          :  (0000024831D4F978)
+[LOG] SoundI::release                          :     Jumping Wood 01 (00000248163A4BC8)
+[LOG] SoundI::release                          :  (0000024831D52BC8)
+[LOG] SoundI::release                          :     Jumping Wood 02 (00000248163A4068)
+[LOG] SoundI::release                          :  (0000024831D52328)
+[LOG] SoundI::release                          :     Jumping Wood 03 (00000248163A31C8)
+[LOG] SoundI::release                          :  (0000024831D52498)
+[LOG] SoundI::release                          :     Jumping Wood 04 (00000248163A46E8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
