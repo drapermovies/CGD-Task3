@@ -8,7 +8,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001EA64CF5D18 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001EA65E9AC18 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -26,14 +26,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 29', format=2, channels=2, frequency=48000, lengthbytes=3936, lengthpcm=67140, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.495959.
@@ -42,14 +42,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 31', format=2, channels=2, frequency=48000, lengthbytes=4416, lengthpcm=69320, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.092285.
@@ -58,14 +58,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Concrete foosteps 07', format=2, channels=2, frequency=48000, lengthbytes=2944, lengthpcm=60480, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.097531.
@@ -74,14 +74,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 35', format=2, channels=2, frequency=48000, lengthbytes=4256, lengthpcm=67624, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.245783.
@@ -90,14 +90,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Concrete foosteps 31', format=2, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=62880, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.058618.
@@ -106,14 +106,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 23', format=2, channels=2, frequency=48000, lengthbytes=4256, lengthpcm=67624, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.089620.
@@ -122,14 +122,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Concrete foosteps 11', format=2, channels=2, frequency=48000, lengthbytes=3040, lengthpcm=61920, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.180512.
@@ -138,14 +138,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Wood Foosteps 25', format=2, channels=2, frequency=48000, lengthbytes=4160, lengthpcm=67096, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.215797.
@@ -154,14 +154,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Wood Foosteps 27', format=2, channels=2, frequency=48000, lengthbytes=3616, lengthpcm=65050, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.068476.
@@ -170,14 +170,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 33', format=2, channels=2, frequency=48000, lengthbytes=4096, lengthpcm=67140, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.553766.
@@ -186,14 +186,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 15', format=2, channels=2, frequency=48000, lengthbytes=3456, lengthpcm=63505, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.081841.
@@ -202,14 +202,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 37', format=2, channels=2, frequency=48000, lengthbytes=3488, lengthpcm=63747, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.222929.
@@ -218,14 +218,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 45', format=2, channels=2, frequency=48000, lengthbytes=3712, lengthpcm=65444, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.420247.
@@ -234,14 +234,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 03', format=2, channels=2, frequency=48000, lengthbytes=5184, lengthpcm=74158, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.211770.
@@ -250,14 +250,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 09', format=2, channels=2, frequency=48000, lengthbytes=4544, lengthpcm=71029, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.496737.
@@ -266,14 +266,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Concrete foosteps 23', format=2, channels=2, frequency=48000, lengthbytes=2720, lengthpcm=60480, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.070214.
@@ -282,14 +282,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Metal Foosteps 47', format=2, channels=2, frequency=48000, lengthbytes=3680, lengthpcm=65201, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.301983.
@@ -298,14 +298,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Wood Foosteps 15', format=2, channels=2, frequency=48000, lengthbytes=4032, lengthpcm=66415, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.093792.
@@ -314,14 +314,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Wood Foosteps 23', format=2, channels=2, frequency=48000, lengthbytes=4032, lengthpcm=66755, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.090392.
@@ -330,14 +330,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Wood Foosteps 13', format=2, channels=2, frequency=48000, lengthbytes=4032, lengthpcm=67438, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.125686.
@@ -346,14 +346,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Concrete foosteps 09', format=2, channels=2, frequency=48000, lengthbytes=3104, lengthpcm=61920, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.189177.
@@ -362,61 +362,133 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EC3BF50C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA4B5F99E8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='Wood Foosteps 29', format=2, channels=2, frequency=48000, lengthbytes=2944, lengthpcm=60909, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.192937.
-[LOG] SoundI::release                          :  (000001EA41312228)
-[LOG] SoundI::release                          :     Wood Foosteps 13 (000001EA416E2B68)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jumping Wood 03', format=2, channels=2, frequency=48000, lengthbytes=5856, lengthpcm=75578, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.692650.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jumping Wood 04', format=2, channels=2, frequency=48000, lengthbytes=4960, lengthpcm=69872, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.836441.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jumping Wood 02', format=2, channels=2, frequency=48000, lengthbytes=4416, lengthpcm=67970, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=1.000000.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 275808
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 54944
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000066EB3BF58C
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFE7FFED9C0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFE7FFED990
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFE7FFEDA90
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFE7FFEDB50
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001EA6A9C8B28
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Jumping Wood 01', format=2, channels=2, frequency=48000, lengthbytes=4928, lengthpcm=70823, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.858172.
+[LOG] SoundI::release                          :  (000001EA66475498)
+[LOG] SoundI::release                          :     Jumping Wood 01 (000001EA44357228)
+[LOG] SoundI::release                          :  (000001EA66475328)
+[LOG] SoundI::release                          :     Jumping Wood 02 (000001EA44357088)
+[LOG] SoundI::release                          :  (000001EA70838838)
+[LOG] SoundI::release                          :     Jumping Wood 03 (000001EA44356EE8)
+[LOG] SoundI::release                          :  (000001EA66475608)
+[LOG] SoundI::release                          :     Jumping Wood 04 (000001EA443573C8)
+[LOG] SoundI::release                          :  (000001EA70837E28)
+[LOG] SoundI::release                          :     Wood Foosteps 13 (000001EA44351F48)
+[LOG] SoundI::release                          :  (000001EA70838278)
+[LOG] SoundI::release                          :     Wood Foosteps 15 (000001EA44350548)
+[LOG] SoundI::release                          :  (000001EA708383E8)
+[LOG] SoundI::release                          :     Wood Foosteps 23 (000001EA44350888)
 [LOG] SoundI::release                          :  (000001EA41312AC8)
-[LOG] SoundI::release                          :     Wood Foosteps 15 (000001EA419208E8)
-[LOG] SoundI::release                          :  (000001EA41312C38)
-[LOG] SoundI::release                          :     Wood Foosteps 23 (000001EA416E29C8)
-[LOG] SoundI::release                          :  (000001EA56B864C8)
-[LOG] SoundI::release                          :     Wood Foosteps 25 (000001EA418AEF98)
-[LOG] SoundI::release                          :  (000001EA56B86078)
-[LOG] SoundI::release                          :     Wood Foosteps 27 (000001EA418AF2D8)
-[LOG] SoundI::release                          :  (000001EA5B8E7028)
-[LOG] SoundI::release                          :     Wood Foosteps 29 (000001EA417A0978)
-[LOG] SoundI::release                          :  (000001EA41312678)
-[LOG] SoundI::release                          :     Metal Foosteps 03 (000001EA41921AC8)
-[LOG] SoundI::release                          :  (000001EA41312DA8)
-[LOG] SoundI::release                          :     Metal Foosteps 09 (000001EA41923328)
-[LOG] SoundI::release                          :  (000001EA56B867A8)
-[LOG] SoundI::release                          :     Metal Foosteps 15 (000001EA418AC898)
-[LOG] SoundI::release                          :  (000001EA56B86BF8)
-[LOG] SoundI::release                          :     Metal Foosteps 23 (000001EA2088B628)
-[LOG] SoundI::release                          :  (000001EA44EA9D78)
-[LOG] SoundI::release                          :     Metal Foosteps 29 (000001EA2088AE08)
-[LOG] SoundI::release                          :  (000001EA56B86918)
-[LOG] SoundI::release                          :     Metal Foosteps 31 (000001EA2088B488)
-[LOG] SoundI::release                          :  (000001EA56B86638)
-[LOG] SoundI::release                          :     Metal Foosteps 33 (000001EA418AF7B8)
-[LOG] SoundI::release                          :  (000001EA56B86A88)
-[LOG] SoundI::release                          :     Metal Foosteps 35 (000001EA2088C188)
-[LOG] SoundI::release                          :  (000001EA41312398)
-[LOG] SoundI::release                          :     Metal Foosteps 37 (000001EA418ABED8)
+[LOG] SoundI::release                          :     Wood Foosteps 25 (000001EA44353FC8)
+[LOG] SoundI::release                          :  (000001EA41312228)
+[LOG] SoundI::release                          :     Wood Foosteps 27 (000001EA443537A8)
+[LOG] SoundI::release                          :  (000001EA70837CB8)
+[LOG] SoundI::release                          :     Wood Foosteps 29 (000001EA44352288)
+[LOG] SoundI::release                          :  (000001EA419B5EC8)
+[LOG] SoundI::release                          :     Metal Foosteps 03 (000001EA44351DA8)
+[LOG] SoundI::release                          :  (000001EA70838558)
+[LOG] SoundI::release                          :     Metal Foosteps 09 (000001EA443554E8)
 [LOG] SoundI::release                          :  (000001EA41312508)
-[LOG] SoundI::release                          :     Metal Foosteps 45 (000001EA418AC3B8)
+[LOG] SoundI::release                          :     Metal Foosteps 15 (000001EA44354168)
 [LOG] SoundI::release                          :  (000001EA41312958)
-[LOG] SoundI::release                          :     Metal Foosteps 47 (000001EA41920268)
-[LOG] SoundI::release                          :  (000001EA56B861E8)
-[LOG] SoundI::release                          :     Concrete foosteps 07 (000001EA2088AAC8)
+[LOG] SoundI::release                          :     Metal Foosteps 23 (000001EA443544A8)
+[LOG] SoundI::release                          :  (000001EA4BF06948)
+[LOG] SoundI::release                          :     Metal Foosteps 29 (000001EA44352908)
+[LOG] SoundI::release                          :  (000001EA4BF06D98)
+[LOG] SoundI::release                          :     Metal Foosteps 31 (000001EA44354E68)
+[LOG] SoundI::release                          :  (000001EA41312398)
+[LOG] SoundI::release                          :     Metal Foosteps 33 (000001EA44351C08)
+[LOG] SoundI::release                          :  (000001EA41312C38)
+[LOG] SoundI::release                          :     Metal Foosteps 35 (000001EA443532C8)
+[LOG] SoundI::release                          :  (000001EA419B61A8)
+[LOG] SoundI::release                          :     Metal Foosteps 37 (000001EA443551A8)
+[LOG] SoundI::release                          :  (000001EA419B6488)
+[LOG] SoundI::release                          :     Metal Foosteps 45 (000001EA44355348)
+[LOG] SoundI::release                          :  (000001EA70838108)
+[LOG] SoundI::release                          :     Metal Foosteps 47 (000001EA44350208)
+[LOG] SoundI::release                          :  (000001EA41312678)
+[LOG] SoundI::release                          :     Concrete foosteps 07 (000001EA44352AA8)
+[LOG] SoundI::release                          :  (000001EA708389A8)
+[LOG] SoundI::release                          :     Concrete foosteps 09 (000001EA443520E8)
 [LOG] SoundI::release                          :  (000001EA413120B8)
-[LOG] SoundI::release                          :     Concrete foosteps 09 (000001EA416E31E8)
-[LOG] SoundI::release                          :  (000001EA56B86358)
-[LOG] SoundI::release                          :     Concrete foosteps 11 (000001EA2088B7C8)
-[LOG] SoundI::release                          :  (000001EA413127E8)
-[LOG] SoundI::release                          :     Concrete foosteps 23 (000001EA4191FA48)
-[LOG] SoundI::release                          :  (000001EA56B86D68)
-[LOG] SoundI::release                          :     Concrete foosteps 31 (000001EA2088AC68)
+[LOG] SoundI::release                          :     Concrete foosteps 11 (000001EA44353E28)
+[LOG] SoundI::release                          :  (000001EA70837F98)
+[LOG] SoundI::release                          :     Concrete foosteps 23 (000001EA44355D08)
+[LOG] SoundI::release                          :  (000001EA41312DA8)
+[LOG] SoundI::release                          :     Concrete foosteps 31 (000001EA44353608)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

@@ -9,6 +9,7 @@ public class moveText : MonoBehaviour
     private Vector2 velocity = Vector2.zero;
     private bool inPosition = false;
     public GameObject image;
+    public GameObject panel;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class moveText : MonoBehaviour
             if (!inPosition)
             {
                 inPosition = true;
+                panel.gameObject.SetActive(false);
                 GetComponentInChildren<UITimer>().countDown = true;
                 Destroy(image);
             }

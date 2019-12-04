@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIImageFade : MonoBehaviour
 {
-    public Text text;
+    public TextMeshProUGUI text;
     private Image image;
 
     // Start is called before the first frame update

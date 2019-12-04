@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIEnemyCounter : MonoBehaviour
 {
-    private Text counterText;
+    private TextMeshProUGUI counterText;
     private int counter = 0;
     private string startText;
     public int maxCounter;
@@ -18,7 +19,7 @@ public class UIEnemyCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        counterText = gameObject.GetComponent<Text>();
+        counterText = gameObject.GetComponent<TextMeshProUGUI>();
         startText = counterText.text;
         rectTransform = GetComponent<RectTransform>();
 
