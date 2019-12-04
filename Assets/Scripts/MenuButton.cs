@@ -194,21 +194,21 @@ public class MenuButton : MonoBehaviour
 
     }
 
-    public void mouseSelect()
-    {
-        if (canvas.currentlyTransitioning == false && !notClickable)
-        {
-            animator.SetBool("pressed", true);
-            if (animator.GetBool("pressed"))
-            {
-                menuTransitionOut();
-            }
-        }
-        else if (canvas.currentlyTransitioning == false && notClickable == true)
-        {
-            menuController.lockedIndex = menuController.index;
-            menuProgression();
-        }
+    //public void mouseSelect()
+    //{
+    //    if (canvas.currentlyTransitioning == false && !notClickable)
+    //    {
+    //        animator.SetBool("pressed", true);
+    //        if (animator.GetBool("pressed"))
+    //        {
+    //            menuTransitionOut();
+    //        }
+    //    }
+    //    else if (canvas.currentlyTransitioning == false && notClickable == true)
+    //    {
+    //        menuController.lockedIndex = menuController.index;
+    //        menuProgression();
+    //    }
 
-    }
+    //}
 }
