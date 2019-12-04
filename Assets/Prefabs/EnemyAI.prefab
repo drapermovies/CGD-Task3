@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2579e194660ba8f469a2772e516e783c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk_audio: event:/Enemies/Enemy  footsteps
+  walk_audio: event:/Enemies/Enemy Footsteps/Enemy Footsteps
   movement_speed: 1
 --- !u!114 &562307144
 MonoBehaviour:
