@@ -46,7 +46,7 @@ public class MenuButton : MonoBehaviour
         if (menuController.index == thisIndex)
         {
             animator.SetBool("selected", true);
-            if (Input.GetAxis("Submit") == 1 && !notClickable)
+            if ((Input.GetAxis("Submit") == 1 || Input.GetAxis("Fire1") == 1) && !notClickable)
             {
                 animator.SetBool("pressed", true);
             }
@@ -54,7 +54,7 @@ public class MenuButton : MonoBehaviour
             {
                 menuTransitionOut();
             }
-            if (Input.GetAxis("Submit") == 1 && notClickable)
+            if ((Input.GetAxis("Submit") == 1 || Input.GetAxis("Fire1") == 1) && notClickable)
             {
                 menuController.lockedIndex = menuController.index;
                 menuProgression();
@@ -72,7 +72,6 @@ public class MenuButton : MonoBehaviour
         animatorFunctions.disableOnce = true;
         canvas.currentlyTransitioning = true;
         menuController.hasTransitionedOut = true;
-        animator.SetBool("pressed", true);
         menuController.lockedIndex = menuController.index;
 
     }
@@ -97,8 +96,8 @@ public class MenuButton : MonoBehaviour
                 case 1:
                     //FOR AUDIO FRIENDS, this code occurs when player has pressed/clicked 'OPTIONS' (less intense sfx, can be reused for the rest of the cases tbh)
                     Debug.Log("Options Menu");
-                    canvas.inOptionsMenu = true;
                     canvas.inMainMenu = false;
+                    canvas.inOptionsMenu = true;
                     switchMenuDisplay();
                     break;
                 case 2:
@@ -205,7 +204,7 @@ public class MenuButton : MonoBehaviour
                 menuTransitionOut();
             }
         }
-        if (canvas.currentlyTransitioning == false && notClickable)
+        else if (canvas.currentlyTransitioning == false && notClickable == true)
         {
             menuController.lockedIndex = menuController.index;
             menuProgression();
