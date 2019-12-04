@@ -152,19 +152,29 @@ public class PlayerMovement : MonoBehaviour
            if (Input.GetKey("left shift"))
            {
                 speed = 14.0f;
-                PlayerAudioManager.Setiswalking(false);
-                PlayerAudioManager.SetisRunning(true);
-                ChangeBool("Running", true);
+                if (!PlayerAudioManager.GetisInAir())
+                {
+                    PlayerAudioManager.Setiswalking(false);
+                    PlayerAudioManager.SetisRunning(true);
+                }
+                    ChangeBool("Running", true);
            }
            
            else
            {
                 speed = 7.5f;
-                PlayerAudioManager.SetisRunning(false);
-                PlayerAudioManager.Setiswalking(true);
+                if (!PlayerAudioManager.GetisInAir())
+                {
+                    PlayerAudioManager.SetisRunning(false);
+                    PlayerAudioManager.Setiswalking(true);
+                }
                 ChangeBool("Walking", true);
            }
 
+        }
+        else
+        {
+            PlayerAudioManager.SetisRunning(false);
         }
 
         if (Input.GetMouseButton(1) && (Input.GetKey("left shift")) == false)
@@ -235,6 +245,7 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     PlayerAudioManager.SetisInAir(false);
+                    PlayerAudioManager.SetisLanding(true);
                     jumpApex = false;
                 }
             }

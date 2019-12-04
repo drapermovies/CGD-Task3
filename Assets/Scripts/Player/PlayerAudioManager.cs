@@ -8,6 +8,7 @@ public static class PlayerAudioManager
     static bool isRunning;
     static bool isJumping;
     static bool isInAir;
+    static bool isLanding;
     static bool isSucking;
     static bool isHit;
 
@@ -48,6 +49,16 @@ public static class PlayerAudioManager
     public static void SetisInAir(bool newInAir)
     {
         isInAir = newInAir;
+    }
+
+    public static bool GetisLanding()
+    {
+        return isLanding;
+    }
+
+    public static void SetisLanding(bool newLanding)
+    {
+        isLanding = newLanding;
     }
 
     public static bool GetisSucking()

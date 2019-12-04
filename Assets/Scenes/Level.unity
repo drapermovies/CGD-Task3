@@ -1659,7 +1659,7 @@ MonoBehaviour:
   audioWalk: event:/Player/Player Footsteps/jumps Metal
   walkingSpeed: 0.5
   runningSpeed: 0.25
-  audioJump: event:/Player/Player Footsteps/jumps Concrete
+  audioLand: event:/Player/Player Footsteps/jumps Concrete
   rb: {fileID: 879439177}
 --- !u!1001 &964378124
 PrefabInstance:
@@ -1938,7 +1938,7 @@ MonoBehaviour:
   audioWalk: event:/Player/jumps Wood
   walkingSpeed: 0.5
   runningSpeed: 0
-  audioJump: event:/Player/jumps Concrete
+  audioLand: 
   rb: {fileID: 0}
 --- !u!64 &1175942295
 MeshCollider:
