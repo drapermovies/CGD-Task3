@@ -3059,7 +3059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249be9784a3c1de42a98f1790ffad92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioWalk: event:/Player/Player Footsteps/jumps Concrete
+  audioWalk: event:/Player/Player Footsteps/Concrete
   walkingSpeed: 0.5
   runningSpeed: 0.33
   audioLand: event:/Player/Player Footsteps/jumps Wood
@@ -3729,11 +3729,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5695753838159191993, guid: 6ba7a6d3a989f24469d07234536ad6dc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0003159333
-      objectReference: {fileID: 0}
     - target: {fileID: 2452736470004437716, guid: 9c91dc26356c37743aeea4496208afdd,
         type: 3}
       propertyPath: m_Name
@@ -3743,6 +3738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5695753838159191993, guid: 6ba7a6d3a989f24469d07234536ad6dc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0003159333
       objectReference: {fileID: 0}
     - target: {fileID: 2452736470004437717, guid: 9c91dc26356c37743aeea4496208afdd,
         type: 3}

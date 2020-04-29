@@ -26,6 +26,7 @@ public class PlayerCapture : MonoBehaviour
                 if(!enemyList.Contains(col.gameObject))
                 {
                     enemyList.Add(col.gameObject);
+                    col.gameObject.GetComponent<EnemyAI>().Capture();
                     col.gameObject.SetActive(false);
                     FindObjectOfType<UIEnemyCounter>().updateCounter();
                     success = true;
@@ -36,6 +37,11 @@ public class PlayerCapture : MonoBehaviour
         if(success)
         {
             capCamera.gameObject.SetActive(true);
+            FMOD.Studio.EventInstance captureAudio = FMODUnity.RuntimeManager.CreateInstance("event:/Player/Player Caputre/Capture Success");
+            captureAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
+            captureAudio.setParameterValue("Success", 1);
+            captureAudio.start();
+            captureAudio.release();
         }
         else
         {

@@ -11,7 +11,7 @@ public static class PlayerAudioManager
     static bool isLanding;
     static bool isSucking;
     static bool isHit;
-
+        
     public static bool GetisWalking()
     {
         return isWalking;

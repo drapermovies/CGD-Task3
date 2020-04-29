@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2579e194660ba8f469a2772e516e783c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk_audio: event:/Player/Player Footsteps/jumps Metal
+  walk_audio: event:/Enemies/Enemy Footsteps/Enemy Footsteps
   movement_speed: 0.25
 --- !u!114 &562307144
 MonoBehaviour:
@@ -480,11 +480,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8610477794755957371}
     m_Modifications:
-    - target: {fileID: 7908002531954754267, guid: 080cb65a749d0db46878057bb4aa201e,
-        type: 3}
-      propertyPath: m_Name
-      value: Collision Particles
-      objectReference: {fileID: 0}
     - target: {fileID: 9204435618845947675, guid: 080cb65a749d0db46878057bb4aa201e,
         type: 3}
       propertyPath: looping
@@ -544,6 +539,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908002531954754267, guid: 080cb65a749d0db46878057bb4aa201e,
+        type: 3}
+      propertyPath: m_Name
+      value: Collision Particles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080cb65a749d0db46878057bb4aa201e, type: 3}

@@ -12,6 +12,8 @@ public class UITimer : MonoBehaviour
 
     public bool countDown = false;
 
+    private FMOD.Studio.EventInstance music;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +26,21 @@ public class UITimer : MonoBehaviour
         //update the label value
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, fraction);
         timer--;
+        music = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music");
+        music.setParameterValue("Timer", timer);
+        music.start();
+        music.release();
+    }
+
+    private void OnDestroy()
+    {
+        music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     // Update is called once per frame
     void Update()
     {
+        music.setParameterValue("Timer", timer);
         if (countDown)
         {
             timer -= Time.deltaTime;

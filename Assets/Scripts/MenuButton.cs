@@ -16,13 +16,6 @@ public class MenuButton : MonoBehaviour
     public bool hasSelected = false;
     public bool hasPushed = false;
 
-
-    [FMODUnity.EventRef]
-    public string MenuSelectSound;
-
-    [FMODUnity.EventRef]
-    public string MenuChangeSound;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +51,7 @@ public class MenuButton : MonoBehaviour
             animator.SetBool("selected", true);
             if (!hasSelected)
             {
-                FMODUnity.RuntimeManager.PlayOneShot(MenuSelectSound);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Menu Scroll");
                 hasSelected = true;
             }
             if ((Input.GetAxis("Submit") == 1 || Input.GetAxis("Fire1") == 1) && !notClickable)
@@ -91,7 +84,7 @@ public class MenuButton : MonoBehaviour
         menuController.lockedIndex = menuController.index;
         if (!hasPushed)
         {
-            FMODUnity.RuntimeManager.PlayOneShot(MenuSelectSound);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/UI/Menu Select");
             hasPushed = true;
         }
     }

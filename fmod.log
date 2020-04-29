@@ -8,7 +8,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000185B1EBBC18 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000027A324486F8 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -21,42 +21,66 @@
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 100)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 1583296
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 77312
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000321FBFF38C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFCF873D9C0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFCF873D990
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFCF873DA90
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFCF873DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000185A46CBEB8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Scroll Down Menu 1', format=2, channels=2, frequency=48000, lengthbytes=14112, lengthpcm=96000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.859019.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 1583296
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 77312
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000321FBFF38C
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFCF873D9C0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFCF873D990
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFCF873DA90
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFCF873DB50
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000185A46CBEB8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='Scroll Up Menu 2', format=2, channels=2, frequency=48000, lengthbytes=18976, lengthpcm=96000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.851896.
-[LOG] SoundI::release                          :  (00000185AA867088)
-[LOG] SoundI::release                          :     Scroll Down Menu 1 (000001858D57FC38)
-[LOG] SoundI::release                          :  (00000185AA8671F8)
-[LOG] SoundI::release                          :     Scroll Up Menu 2 (000001858D57ED98)
+[LOG] SystemI::createSound                     : filename = Goose Abuse\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 0000027A2DE47F68 : node = 0000027A48F9DB60
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027A17438DC8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027A2DE47F68
+[LOG] SystemI::createSoundInternal             :     Create name='Goose Abuse\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1583296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 78368
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027A48F9DC78
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1583296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 78368
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000805886F07C
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFF624DD9C0
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFF624DD990
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFF624DDA90
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFF624DDB50
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 0000027A2DED0508
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Atmos Monkeys', format=2, channels=2, frequency=48000, lengthbytes=148576, lengthpcm=501591, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.100146.
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='Music Finish', format=2, channels=2, frequency=48000, lengthbytes=72320, lengthpcm=276480, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.891266.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027A2DE47F68
+[LOG] SystemI::createSound                     : filename = Goose Abuse\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000027A2DE36198 : node = 0000027A2B7287D0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000027A17438DC8.  list count = 0
+[LOG] SoundI::getSubSound                      : sound 0000027A2DE47F68.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000027A2DE36198
+[LOG] SystemI::createSoundInternal             :     Create name='Goose Abuse\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1583296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 78368
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000027A2B7288E8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='goozabooz synth1 + bass', format=2, channels=2, frequency=48000, lengthbytes=222048, lengthpcm=737280, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.891266.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000027A2DE36198
+[LOG] SoundI::getSubSound                      : sound 0000027A2DE36198.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Atmos Monkeys (0000027A2DE47F68)
+[LOG] SoundI::release                          :     Atmos Monkeys (0000027A174392F8)
+[LOG] SoundI::release                          :     Atmos Monkeys (0000027A2DE48118)
+[LOG] SoundI::release                          : goozabooz synth1 + bass (0000027A2DE36198)
+[LOG] SoundI::release                          :     goozabooz synth1 + bass (0000027A17437278)
+[LOG] SoundI::release                          :     goozabooz synth1 + bass (0000027A2DE48988)
+[LOG] SoundI::release                          :  (0000027A2BD56D08)
+[LOG] SoundI::release                          :     Music Finish (0000027A17435EF8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -66,4 +90,6 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : Closed.

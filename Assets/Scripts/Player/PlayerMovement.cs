@@ -214,6 +214,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if(anim.GetBool("Capturing") && Input.GetMouseButtonDown(0))
         {
+            FMOD.Studio.EventInstance suckAudio = FMODUnity.RuntimeManager.CreateInstance("event:/Player/Player Caputre/Capture Suck");
+            suckAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.gameObject));
+            suckAudio.setParameterValue("Capture", 1);
+            suckAudio.start();
+            suckAudio.release();
             FindObjectOfType<PlayerCapture>().Capture();
             aimParticles.SetActive(false);
             captureParticles.SetActive(true);
@@ -228,19 +233,16 @@ public class PlayerMovement : MonoBehaviour
             PlayerAudioManager.Setiswalking(false);
         }
 
-    }
-
-    private void FixedUpdate()
-    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (rigidbody.velocity.y <= 0.2f && rigidbody.velocity.y >= -0.2f)
             {
-                if (Physics.Raycast(transform.position, -Vector3.up, gameObject.GetComponent<Collider>().bounds.extents.y + 1.0f))
+                if (Physics.Raycast(transform.position, -Vector3.up, 1.0f))
                 {
                     rigidbody.AddForce(new Vector3(0, 30, 0), ForceMode.Impulse);
                     PlayerAudioManager.SetisJumping(true);
                     PlayerAudioManager.Setiswalking(false);
+                    PlayerAudioManager.SetisRunning(false);
                     PlayerAudioManager.SetisInAir(true);
                     anim.SetTrigger("JumpingTrigger");
                 }
@@ -265,8 +267,14 @@ public class PlayerMovement : MonoBehaviour
                     jumpApex = false;
                 }
             }
-            
+
         }
+
+    }
+
+    private void FixedUpdate()
+    {
+
 
         if (anim.GetBool("Capturing"))
         {

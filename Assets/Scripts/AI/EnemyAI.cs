@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float walk_speed = 1.3f;
     [SerializeField] private float run_speed = 2.85f;
     public float jumpSpeed = 600.0f;
-    public float EnemyRunDistance = 4.0f;
+    public float EnemyRunDistance = 0.5f;
 
     [Header("Jump")]
     public bool grounded = false;
@@ -41,6 +41,18 @@ public class EnemyAI : MonoBehaviour
     private Transform tform;
     #endregion
 
+    private FMOD.Studio.EventInstance idleAudio;
+    private FMOD.Studio.EventInstance aggroAudio;
+
+    public void Capture()
+    {
+        has_died = true;
+        idleAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        idleAudio.release();
+        aggroAudio.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        aggroAudio.release();
+    }
+
     void Awake()
     {
         anim = GetComponentInChildren<Animator>();
@@ -66,7 +78,20 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         nav_agents = FindObjectsOfType<NavMeshAgent>();
+        idleAudio = FMODUnity.RuntimeManager.CreateInstance("event:/Enemies/Dialogue/Monkey Idle");
+        idleAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        idleAudio.setParameterValue("Idle", 1);
+        idleAudio.start();
+        aggroAudio = FMODUnity.RuntimeManager.CreateInstance("event:/Enemies/Dialogue/Monkey Panic");
+        aggroAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        aggroAudio.setParameterValue("PlayerDistance", 5);
+        aggroAudio.start();
     }
+
+    private void OnDestroy()
+    {
+    }
+
     void FixedUpdate()
     {
         grounded = Physics.CheckSphere(groundCheck.position, groundRadius, 
@@ -88,6 +113,8 @@ public class EnemyAI : MonoBehaviour
             {
                 run_particles.Play();
             }
+            idleAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+            aggroAudio.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         }
     }
 
@@ -135,6 +162,8 @@ public class EnemyAI : MonoBehaviour
         GetComponent<NavMeshAgent>().speed = walk_speed; //Move slower
 
         EnemyAudioManager.is_walking = true;
+        idleAudio.setParameterValue("Idle", 1);
+        aggroAudio.setParameterValue("PlayerDistance", 5);
     }
 
     //Play Idle Animation and find new waypoint
@@ -164,6 +193,9 @@ public class EnemyAI : MonoBehaviour
         GetComponent<NavMeshAgent>().speed = run_speed; //Move faster
 
         EnemyAudioManager.is_walking = true;
+
+        idleAudio.setParameterValue("Idle", 0);
+        aggroAudio.setParameterValue("PlayerDistance", 1.25f);
     }
 
     //Plays a particle when we 'bump' into something
@@ -273,11 +305,13 @@ public class EnemyAI : MonoBehaviour
                 Run();
                 UpdateTargets(newPos);
 
-               // Debug.Log("<color=red>AAHHH!!! SCARY PLAYER!!!</color>");
-
+                // Debug.Log("<color=red>AAHHH!!! SCARY PLAYER!!!</color>");
                 return;
             }
+            else
+            {
+                CrippledWalk();
+            }
         }
-        CrippledWalk();
     }
 }
