@@ -195,6 +195,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1603968
   Exists: 1
+--- !u!114 &-8670153422666542144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: E:\Course Work\Year Three\CGD\CGD-Task3\Goose Abuse\Build\Desktop\Master Bank.bank
+  lastModified: 637243972118225191
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1661664
+  Exists: 1
 --- !u!114 &-8665572024979647615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,12 +1022,12 @@ MonoBehaviour:
   Path: event:/Music/Music
   guid: e8b2e97b64553540b74a79a9e74a2fb1
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -7020109840787064925}
+  - {fileID: 7658783367288939288}
   MinDistance: 0
   MaxDistance: 0
   Length: 61685
@@ -1398,6 +1417,38 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &-6285203846177449410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Success
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &-6268803645987210914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: PlayerDistance
+  Min: 1.25
+  Max: 10
+  Default: 1.25
 --- !u!114 &-6264926655567161819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,6 +1510,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &-6150953454626533849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Transition (Select)
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &-6135347737085922675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: KeyDown
   Min: 0
   Max: 1
   Default: 0
@@ -1621,12 +1704,12 @@ MonoBehaviour:
   Path: event:/Player/Player Footsteps/jumps Concrete
   guid: 78c0e92ae7189249b6a5705eaaefbd59
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 1491483262961879839}
+  - {fileID: 6021176673037555918}
   MinDistance: 0
   MaxDistance: 0
   Length: 1554
@@ -1991,6 +2074,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &-5138415638700870491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &-5136107277331195885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,12 +2105,12 @@ MonoBehaviour:
   Path: event:/Player/Player Caputre/Capture Suck
   guid: 6ec8411683b1804f8deb042d486bbfde
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 8725496132492715042}
+  - {fileID: 5663853530051176638}
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
@@ -2062,12 +2161,12 @@ MonoBehaviour:
   Path: event:/Enemies/Dialogue/Monkey Panic
   guid: 1a9bb27acde28a4bae1f89456ea143b3
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 8495245899586567193}
+  - {fileID: -6268803645987210914}
   MinDistance: 1
   MaxDistance: 75
   Length: 1980
@@ -2287,12 +2386,12 @@ MonoBehaviour:
   Path: event:/Enemies/Dialogue/Monkey Idle
   guid: c3349d3f3c66cb47a30c5a2fecf84648
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 5998152742673868619}
+  - {fileID: 7744328726513393421}
   MinDistance: 0
   MaxDistance: 75
   Length: 3000
@@ -2311,12 +2410,12 @@ MonoBehaviour:
   Path: event:/Player/Player Footsteps/jumps Wood
   guid: bcda68757282e840b9ed02269faf2c14
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -4364920902046966508}
+  - {fileID: 4780218742204529537}
   MinDistance: 0
   MaxDistance: 0
   Length: 1574
@@ -2335,13 +2434,13 @@ MonoBehaviour:
   Path: event:/Enemies/Enemy Footsteps/Enemy Footsteps
   guid: 813235872b94a64baa88dd1f5e583602
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 1923873304997322942}
-  - {fileID: 4879874118593922781}
+  - {fileID: -5138415638700870491}
+  - {fileID: -2117640458863332079}
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
@@ -3140,12 +3239,12 @@ MonoBehaviour:
   Path: event:/Player/Player Caputre/Capture Success
   guid: 5becba26ed9b5f42966b4035a10fd715
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5070971354382630364}
+  - {fileID: -6285203846177449410}
   MinDistance: 1
   MaxDistance: 20
   Length: 980
@@ -3260,13 +3359,13 @@ MonoBehaviour:
   Path: event:/Player/Player Footsteps/Loops
   guid: fb3d5ac807f3a947a8ccdf573fd6592e
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 627912299635065303}
-  - {fileID: -3927251645567681629}
+  - {fileID: 3334160959242497209}
+  - {fileID: 4800079409782469789}
   MinDistance: 0
   MaxDistance: 0
   Length: 7600
@@ -3525,6 +3624,22 @@ MonoBehaviour:
   Name: Success
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &-2117640458863332079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
   Default: 0
 --- !u!114 &-2111109402757946107
 MonoBehaviour:
@@ -4472,7 +4587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 4432765385868012330}
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   EditorEvents:
   - {fileID: 8672486955094890298}
   - {fileID: -5090292160806022534}
@@ -4489,9 +4604,9 @@ MonoBehaviour:
   - {fileID: -2678291843654140088}
   - {fileID: 8255505699447701204}
   - {fileID: 5296038900314497654}
-  MasterBankRef: {fileID: 1870696978004063573}
+  MasterBankRef: {fileID: -8670153422666542144}
   StringsBankRef: {fileID: 4432765385868012330}
-  stringsBankWriteTime: 637237632175206592
+  stringsBankWriteTime: 637243972118015194
   cacheVersion: 2
 --- !u!114 &42350530432946155
 MonoBehaviour:
@@ -5351,12 +5466,12 @@ MonoBehaviour:
   Path: event:/Player/Player Footsteps/jumps Metal
   guid: 6c75758f82eeb24f9c48db6af9ccc92e
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 8382292485462770846}
+  - {fileID: 7764895201714384563}
   MinDistance: 0
   MaxDistance: 0
   Length: 1515
@@ -6170,6 +6285,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &3334160959242497209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &3455612959646027403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6723,7 +6854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Goose Abuse\Build\Desktop\Master Bank.strings.bank
-  lastModified: 637237632175206592
+  lastModified: 637243972118015194
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -6905,6 +7036,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Menu Transition (Select)
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &4780218742204529537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &4800079409782469789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Speed
   Min: 0
   Max: 1
   Default: 0
@@ -7108,7 +7271,7 @@ MonoBehaviour:
   Path: event:/Enemies/Enemy Footsteps/Concrete (2)
   guid: 73f6e72b363b63429ee542c945671228
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -7244,6 +7407,22 @@ MonoBehaviour:
   Min: 1.25
   Max: 10
   Default: 1.25
+--- !u!114 &5663853530051176638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Capture
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &5791402083182705070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7305,6 +7484,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Idle
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &6021176673037555918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
   Min: 0
   Max: 1
   Default: 0
@@ -8065,7 +8260,7 @@ MonoBehaviour:
   Path: event:/Environment/Atmosphere
   guid: c11c09248a09474d9bae5287e641b6e1
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -8210,6 +8405,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &7658783367288939288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Timer
+  Min: 0
+  Max: 180
+  Default: 0
 --- !u!114 &7675381785803283219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8258,6 +8469,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &7744328726513393421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Idle
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &7750435131054844691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8303,6 +8530,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Menu Transition (Select)
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &7764895201714384563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
   Min: 0
   Max: 1
   Default: 0
@@ -8661,7 +8904,7 @@ MonoBehaviour:
   Path: event:/Player/Player Footsteps/Concrete
   guid: eb74bcff17a16f4798b10940aa56b083
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -8844,12 +9087,12 @@ MonoBehaviour:
   Path: event:/UI/Menu Select
   guid: 15ba917545979749ba71a3f6f0f2bc7d
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 2073810583908861878}
+  - {fileID: -6150953454626533849}
   MinDistance: 0
   MaxDistance: 0
   Length: 582
@@ -8916,12 +9159,12 @@ MonoBehaviour:
   Path: event:/UI/Menu Scroll
   guid: f48006a6e20f1f4e94577d6eddaed214
   Banks:
-  - {fileID: 1870696978004063573}
+  - {fileID: -8670153422666542144}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1974283807207585851}
+  - {fileID: -6135347737085922675}
   MinDistance: 0
   MaxDistance: 0
   Length: 369
