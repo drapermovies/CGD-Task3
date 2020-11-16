@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour
     public bool currentlyTransitioning = false;
     public bool checkedState = false;
 
-    [SerializeField] MainMenuCamera mainCamera;
     [SerializeField] Animator animator;
 
     FMOD.Studio.Bus Master;

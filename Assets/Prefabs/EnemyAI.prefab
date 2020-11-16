@@ -480,6 +480,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8610477794755957371}
     m_Modifications:
+    - target: {fileID: 7908002531954754267, guid: 080cb65a749d0db46878057bb4aa201e,
+        type: 3}
+      propertyPath: m_Name
+      value: Collision Particles
+      objectReference: {fileID: 0}
     - target: {fileID: 9204435618845947675, guid: 080cb65a749d0db46878057bb4aa201e,
         type: 3}
       propertyPath: looping
@@ -540,11 +545,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7908002531954754267, guid: 080cb65a749d0db46878057bb4aa201e,
+    - target: {fileID: 4969895855543126538, guid: 080cb65a749d0db46878057bb4aa201e,
         type: 3}
-      propertyPath: m_Name
-      value: Collision Particles
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7a05de48c2ecb2438a07b3a5c6eac13, type: 2}
+    - target: {fileID: 4969895855543126538, guid: 080cb65a749d0db46878057bb4aa201e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7a05de48c2ecb2438a07b3a5c6eac13, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080cb65a749d0db46878057bb4aa201e, type: 3}
 --- !u!4 &8067761623098788678 stripped
